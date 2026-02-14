@@ -19,16 +19,12 @@ body {
     transition: 0.4s ease;
 }
 
-/* HERO */
+/* ================= HERO SECTION ================= */
 
 .hero {
     position: relative;
-    height: 100vh;
+    height: 75vh;
     background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .overlay {
@@ -38,53 +34,63 @@ body {
     backdrop-filter: blur(3px);
 }
 
-.hero-content {
-    position: relative;
+.hero-top {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     z-index: 2;
-    animation: fadeUp 1.2s ease forwards;
+    animation: fadeUp 1s ease forwards;
 }
 
 .profile {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 4px solid var(--accent);
-    box-shadow: 0 0 30px rgba(212,167,98,0.6);
-    margin-bottom: 25px;
+    box-shadow: 0 0 35px rgba(212,167,98,0.6);
+    margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .tagline {
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 20px;
     opacity: 0.85;
 }
 
-.theme-btn {
-    margin-top: 30px;
+/* ================= THEME BUTTON ================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
     padding: 10px 22px;
     border-radius: 30px;
     border: 1px solid var(--accent);
-    background: transparent;
+    background: rgba(0,0,0,0.6);
     color: var(--accent);
     cursor: pointer;
+    z-index: 1000;
     transition: 0.3s ease;
 }
 
-.theme-btn:hover {
+.theme-toggle:hover {
     background: var(--accent);
     color: black;
 }
 
-/* LIBRARY */
+/* ================= LIBRARY SECTION ================= */
 
 .library {
     max-width: 900px;
-    margin: -80px auto 80px auto;
+    margin: -120px auto 80px auto;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -94,17 +100,17 @@ h1 {
 .card {
     background: rgba(25,18,12,0.85);
     padding: 40px;
-    border-radius: 18px;
+    border-radius: 20px;
     backdrop-filter: blur(8px);
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     transition: 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    transform: translateY(-12px);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.8);
 }
 
 .card h2 {
@@ -113,7 +119,12 @@ h1 {
     color: var(--accent);
 }
 
-/* POEM PAGE */
+.card p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= POEM PAGE ================= */
 
 .poem-page {
     min-height: 100vh;
@@ -130,9 +141,9 @@ h1 {
     background: rgba(25,18,12,0.9);
     padding: 60px;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.7);
     backdrop-filter: blur(10px);
-    animation: fadeUp 1.2s ease forwards;
+    animation: fadeUp 1s ease forwards;
 }
 
 .stanza {
@@ -157,7 +168,74 @@ h1 {
     color: black;
 }
 
-/* LIGHT MODE */
+/* ================= ABOUT BUTTON ================= */
+
+.about-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 1px solid var(--accent);
+    background: rgba(0,0,0,0.6);
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+.about-fixed:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* ================= ABOUT PANEL ================= */
+
+.about-panel {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+}
+
+.about-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about-content {
+    max-width: 600px;
+    background: rgba(25,18,12,0.95);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeUp 0.8s ease;
+}
+
+.close-btn {
+    margin-top: 30px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-btn:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* ================= LIGHT MODE ================= */
 
 body.light {
     background: var(--bg-light);
@@ -165,11 +243,18 @@ body.light {
 }
 
 body.light .card,
-body.light .poem-container {
+body.light .poem-container,
+body.light .about-content {
     background: rgba(255,255,255,0.95);
+    color: var(--text-light);
 }
 
-/* ANIMATION */
+body.light .theme-toggle,
+body.light .about-fixed {
+    background: rgba(255,255,255,0.8);
+}
+
+/* ================= ANIMATION ================= */
 
 @keyframes fadeUp {
     from {
