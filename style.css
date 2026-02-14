@@ -3,118 +3,97 @@
 body {
     margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
-                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-    background-size: cover;
-    background-attachment: fixed;
+    background: #1a0f08;
     color: #f5e6c8;
-    line-height: 1.9;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Paper texture overlay */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("https://www.transparenttextures.com/patterns/paper-2.png");
-    opacity: 0.12;
-    pointer-events: none;
-}
-
-.container {
-    max-width: 850px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-h1 {
+/* Header */
+header {
     text-align: center;
-    font-size: 46px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    padding: 40px;
+    background: #2c170b;
+    border-bottom: 2px solid #6b3a1e;
 }
 
-.bio {
-    text-align: center;
-    margin-bottom: 60px;
+header h1 {
+    font-size: 45px;
+}
+
+header p {
     font-style: italic;
-    color: #e0c097;
+    color: #d4b08a;
 }
 
-/* Library cards */
+/* Navbar */
+nav {
+    text-align: center;
+    background: #3b1e10;
+    padding: 12px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffdfaa;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Book Library */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+}
+
 .book-card {
-    background: rgba(70, 45, 25, 0.85);
-    padding: 30px;
-    margin: 30px 0;
-    border-radius: 12px;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 223, 170, 0.1);
+    background: #4a2814;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
 .book-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    background: rgba(90, 55, 30, 0.95);
-    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
+    background: #623318;
+    transform: translateY(-5px);
 }
 
-.book-title {
-    font-size: 26px;
-    margin-bottom: 15px;
+.book-card h2 {
     color: #ffdfaa;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Reading page */
-.read-page {
-    background: rgba(60, 35, 20, 0.9);
+/* Reading Page */
+.read-container {
+    max-width: 850px;
+    margin: auto;
     padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    font-size: 20px;
+    line-height: 2;
 }
-
-/* Fade-in poem lines */
-.read-page p {
-    opacity: 0;
-    animation: textFade 1.2s ease forwards;
-}
-
-.read-page p:nth-child(2) { animation-delay: 0.2s; }
-.read-page p:nth-child(3) { animation-delay: 0.4s; }
-.read-page p:nth-child(4) { animation-delay: 0.6s; }
-.read-page p:nth-child(5) { animation-delay: 0.8s; }
 
 .back {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 30px;
     color: #ffdfaa;
-    font-size: 18px;
+    text-decoration: none;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c170b;
+    margin-top: 50px;
 }
 
-@keyframes textFade {
-    to {
-        opacity: 1;
-    }
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    header h1 { font-size: 28px; }
+    .read-container { font-size: 17px; }
 }
