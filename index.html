@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <title>আমার সাহিত্য ভুবন</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>আমার সাহিত্য ভুবন</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -11,13 +12,6 @@
 <h1>রানি মুখার্জি</h1>
 <p class="bio">শব্দে বোনা অনুভূতির ঘর</p>
 
-<!-- Peaceful Sound Button -->
-<button onclick="toggleMusic()" class="music-btn">🎧 শান্ত সুর চালু / বন্ধ</button>
-
-<audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3c1d2b6e8a.mp3" type="audio/mp3">
-</audio>
-
 <a href="poem1.html">
     <div class="book-card">
         <div class="book-title">❝ নববর্ষ ❞</div>
@@ -25,25 +19,14 @@
     </div>
 </a>
 
-<a href="story1.html">
+<a href="poem2.html">
     <div class="book-card">
         <div class="book-title">❝ স্বার্থ ❞</div>
-        <p>হঠাৎ নেমে আসা বৃষ্টি আর এক অদ্ভুত সাক্ষাৎ...</p>
+        <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
     </div>
 </a>
 
 </div>
-
-<script>
-function toggleMusic() {
-    let music = document.getElementById("bgMusic");
-    if (music.paused) {
-        music.play();
-    } else {
-        music.pause();
-    }
-}
-</script>
 
 </body>
 </html>
