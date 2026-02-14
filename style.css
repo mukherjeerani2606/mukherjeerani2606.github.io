@@ -1,42 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
 body {
+    margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    max-width: 800px;
+    background: #fdf6e3;
+    color: #3e2f1c;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 850px;
     margin: auto;
-    padding: 20px;
-    background: #f8f8f8;
+    padding: 40px 20px;
 }
 
 h1 {
     text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 .bio {
     text-align: center;
-    margin-bottom: 40px;
-    color: gray;
+    font-style: italic;
+    margin-bottom: 50px;
+    color: #6b4f2a;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: 0.3s;
+.book-card {
+    background: #fffaf0;
+    border: 1px solid #e6d5b8;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.book-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.book-title {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
+}
+
+.read-page {
+    background: #fffaf0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
 }
 
 .back {
-    margin-top: 30px;
     display: inline-block;
+    margin-top: 40px;
+    color: #5a3e1b;
 }
