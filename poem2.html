@@ -7,6 +7,12 @@
 </head>
 <body>
 
+<div class="author-photo">
+    <img src="author.jpg" alt="Author Photo">
+</div>
+
+<button id="themeToggle">🌙 Dark mode</button>
+
 <div class="container">
 <div class="read-page">
 
@@ -22,7 +28,7 @@
 <p>
 নিজের স্বার্থ ফুরালে বুঝি <br>
 কেউ কাউকে না চিনি <br>
-যতই ভাবি আাপন সবাই <br>
+যতই ভাবি আপন সবাই <br>
 ততই বেশি ঠকায় সবাই
 </p>
 
@@ -45,6 +51,14 @@
 
 </div>
 </div>
+
+<script>
+const btn = document.getElementById("themeToggle");
+btn.onclick = () => {
+  document.body.classList.toggle("light-mode");
+  btn.innerText = document.body.classList.contains("light-mode") ? "☀️ Light mode" : "🌙 Dark mode";
+};
+</script>
 
 </body>
 </html>
