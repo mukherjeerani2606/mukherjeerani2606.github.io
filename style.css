@@ -8,64 +8,46 @@
 
 body {
     font-family: 'Noto Serif Bengali', serif;
-    background: #3b2a1f;
+    background: #2f1e14;
     display: flex;
     justify-content: center;
     padding: 60px 20px;
 }
 
-/* Paper Effect */
+/* Paper Background */
 .container {
-    background: #f4e7c5;
-    max-width: 850px;
+    background: url("paper.png") no-repeat center center;
+    background-size: contain;
+    max-width: 900px;
     width: 100%;
-    padding: 70px 60px;
-    border-radius: 6px;
-    box-shadow: 
-        0 0 40px rgba(0,0,0,0.6),
-        inset 0 0 60px rgba(0,0,0,0.15);
+    min-height: 1000px;
+    padding: 120px 120px 120px 120px;
     position: relative;
 }
 
-/* Slight texture feel using gradient */
-.container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 4px 4px;
-    opacity: 0.4;
-    pointer-events: none;
-}
-
+/* Text Styling */
 h1 {
     text-align: center;
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 38px;
+    margin-bottom: 20px;
     color: #3e2a1a;
 }
 
 .bio {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     font-style: italic;
     color: #6b4b2a;
 }
 
-/* Writing List */
 .book-card {
     margin-bottom: 40px;
+    border-bottom: 1px solid #c9b38f;
     padding-bottom: 15px;
-    border-bottom: 1px solid #d6c4a1;
-    transition: 0.3s;
-}
-
-.book-card:hover {
-    transform: translateX(6px);
 }
 
 .book-title {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 8px;
     color: #4a2f1a;
 }
@@ -75,10 +57,9 @@ a {
     color: inherit;
 }
 
-/* Reading Page */
 .read-page {
     font-size: 20px;
-    line-height: 2.2;
+    line-height: 2.1;
     color: #3b2a1f;
 }
 
