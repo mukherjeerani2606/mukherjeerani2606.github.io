@@ -4,66 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>আমার সাহিত্য ভুবন</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- THEME TOGGLE -->
-<button id="themeToggle" class="theme-toggle">🌙 Dark mode</button>
+<div class="hero">
 
-<!-- HERO SECTION -->
-<header class="hero">
+    <div class="top-btn">
+        <button class="dark-btn">🌙 Dark</button>
+    </div>
 
-    <div class="overlay"></div>
-
-    <div class="hero-top">
-        <img src="profile.jpg" class="profile" alt="Author">
+    <div class="hero-content">
+        <img src="author.jpg" class="profile">
         <h1>রানি মুখার্জি</h1>
-        <p class="tagline">শব্দে বোনা অনুভূতির ঘর</p>
+        <p>শব্দে বোনা অনুভূতির ঘর</p>
     </div>
 
-</header>
-
-<!-- LIBRARY -->
-<main class="library">
-
-    <a href="poem1.html" class="card">
-        <h2>❝ নববর্ষ ❞</h2>
-        <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
-    </a>
-
-    <a href="poem2.html" class="card">
-        <h2>❝ স্বার্থ ❞</h2>
-        <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-    </a>
-
-</main>
-
-<!-- ABOUT BUTTON -->
-<button id="aboutBtn" class="about-fixed">About Author</button>
-
-<!-- ABOUT PANEL -->
-<div id="aboutPanel" class="about-panel">
-    <div class="about-content">
-        <h2>লেখকের পরিচয়</h2>
-        <p>
-আমি রানি মুখার্জি। শব্দ আমার আশ্রয়, অনুভূতি আমার শক্তি।  
-ছোটবেলা থেকেই লেখা আমার ভালোবাসা।  
-মানুষের মন, সম্পর্কের টানাপোড়েন, সময়ের পরিবর্তন—  
-এসব নিয়েই লিখি।  
-
-আমি লিখি কারণ অনুভূতি না বললে জমে যায়।  
-আমি লিখি কারণ শব্দই আমার মুক্তি।
-        </p>
-
-        <button id="closeAbout" class="close-btn">Close</button>
-    </div>
 </div>
 
-<script src="script.js"></script>
+<div class="container">
+
+<a href="poem1.html">
+    <div class="book-card">
+        <div class="book-title">“ নববর্ষ ”</div>
+        <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
+    </div>
+</a>
+
+<a href="poem2.html">
+    <div class="book-card">
+        <div class="book-title">“ স্বার্থ ”</div>
+        <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
+    </div>
+</a>
+
+</div>
+
+<a href="#" class="about-btn">About Author</a>
 
 </body>
 </html>
