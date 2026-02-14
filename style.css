@@ -1,130 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
-
-/* ========================= */
-/* GLOBAL RESET */
-/* ========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
 body {
-    font-family: Georgia, serif;
+    margin: 0;
+    font-family: 'Noto Serif Bengali', serif;
+    background: #fdf6e3;
+    color: #3e2f1c;
+    line-height: 1.8;
 }
 
-
-/* ===================================================== */
-/* ================= FIRST PAGE (HOME) ================= */
-/* ===================================================== */
-
-.home-page {
-    min-height: 100vh;
-    background: linear-gradient(to right, #fdf6ec, #f7e7d4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
-/* Center Card */
-.home-content {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 70px 60px;
-    width: 75%;
-    max-width: 900px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-/* Title */
-.home-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    color: #3a2a1d;
-    margin-bottom: 15px;
-}
-
-/* Subtitle */
-.home-content p {
-    font-size: 20px;
-    color: #6b4f3a;
-    margin-bottom: 50px;
-}
-
-/* Poem Link */
-.poem-link {
-    display: inline-block;
-    font-size: 26px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #4a2c1a;
-    padding: 12px 30px;
-    border: 2px solid #4a2c1a;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-.poem-link:hover {
-    background-color: #4a2c1a;
-    color: white;
-}
-
-
-/* ===================================================== */
-/* ================= SECOND PAGE (POEM) ================= */
-/* ===================================================== */
-
-.read-page {
-    min-height: 100vh;
-    background-color: #3e2516;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Paper Theme Container */
-.paper-container {
-    background: url("paper.png") no-repeat center center;
-    background-size: contain;
-    width: 850px;
-    height: 1000px;
-    position: relative;
-    padding: 150px 120px;
-    box-sizing: border-box;
-}
-
-/* Poem Title */
-.paper-container h1 {
+h1 {
     text-align: center;
     font-size: 42px;
-    font-weight: bold;
-    color: #3b2412;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
-/* Poem Text */
-.paper-container p {
-    font-size: 23px;
-    font-weight: bold;
-    color: #2a180d;
-    line-height: 1.9;
+.bio {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 50px;
+    color: #6b4f2a;
 }
 
-/* Back Button */
-.back {
-    position: absolute;
-    bottom: 70px;
-    left: 120px;
+.book-card {
+    background: #fffaf0;
+    border: 1px solid #e6d5b8;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.book-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.book-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+a {
     text-decoration: none;
-    font-weight: bold;
-    color: #3b2412;
-    font-size: 18px;
-    transition: 0.3s;
+    color: inherit;
 }
 
-.back:hover {
-    color: #000;
+.read-page {
+    background: #fffaf0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
 }
 
+.back {
+    display: inline-block;
+    margin-top: 40px;
+    color: #5a3e1b;
+}
