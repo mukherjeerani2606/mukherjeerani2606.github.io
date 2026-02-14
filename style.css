@@ -3,12 +3,26 @@
 body {
     margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(25,15,40,0.85), rgba(25,15,40,0.85)),
-                url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
+                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
     background-size: cover;
     background-attachment: fixed;
-    color: #f5e6ff;
+    color: #f5e6c8;
     line-height: 1.9;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Paper texture overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/paper-2.png");
+    opacity: 0.12;
+    pointer-events: none;
 }
 
 .container {
@@ -26,29 +40,34 @@ h1 {
 
 .bio {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     font-style: italic;
-    color: #d9c7ff;
+    color: #e0c097;
 }
 
+/* Library cards */
 .book-card {
-    background: rgba(60, 45, 90, 0.85);
+    background: rgba(70, 45, 25, 0.85);
     padding: 30px;
     margin: 30px 0;
     border-radius: 12px;
     transition: 0.4s;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 223, 170, 0.1);
+    cursor: pointer;
 }
 
 .book-card:hover {
-    transform: translateY(-6px);
-    background: rgba(80, 55, 120, 0.95);
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(90, 55, 30, 0.95);
+    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
 }
 
 .book-title {
     font-size: 26px;
     margin-bottom: 15px;
-    color: #ffddff;
+    color: #ffdfaa;
 }
 
 a {
@@ -56,33 +75,46 @@ a {
     color: inherit;
 }
 
+/* Reading page */
 .read-page {
-    background: rgba(40, 30, 70, 0.9);
+    background: rgba(60, 35, 20, 0.9);
     padding: 50px;
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
+/* Fade-in poem lines */
+.read-page p {
+    opacity: 0;
+    animation: textFade 1.2s ease forwards;
+}
+
+.read-page p:nth-child(2) { animation-delay: 0.2s; }
+.read-page p:nth-child(3) { animation-delay: 0.4s; }
+.read-page p:nth-child(4) { animation-delay: 0.6s; }
+.read-page p:nth-child(5) { animation-delay: 0.8s; }
+
 .back {
     display: inline-block;
     margin-top: 40px;
-    color: #ffddff;
+    color: #ffdfaa;
+    font-size: 18px;
 }
 
-/* Music Button */
-.music-btn {
-    display: block;
-    margin: 20px auto 50px;
-    padding: 10px 20px;
-    background: #6b4fd3;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.music-btn:hover {
-    background: #8b6bff;
+@keyframes textFade {
+    to {
+        opacity: 1;
+    }
 }
