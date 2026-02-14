@@ -3,12 +3,9 @@
 body {
     margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
-                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-    background-size: cover;
-    background-attachment: fixed;
-    color: #f5e6c8;
-    line-height: 1.9;
+    background: radial-gradient(circle at top, #5a3e2b, #2c1b12 70%);
+    color: #f3e6d0;
+    min-height: 100vh;
 }
 
 .container {
@@ -19,36 +16,43 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 46px;
-    margin-bottom: 10px;
+    font-size: 44px;
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 .bio {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    color: #d2b48c;
     font-style: italic;
-    color: #e0c097;
 }
 
 .book-card {
-    background: rgba(70, 45, 25, 0.85);
+    background: #3b2417;
     padding: 30px;
-    margin: 30px 0;
-    border-radius: 12px;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 25px 0;
+    border-radius: 14px;
+    border: 1px solid #6b4423;
+    transition: 0.3s;
 }
 
 .book-card:hover {
-    transform: translateY(-6px);
-    background: rgba(90, 55, 30, 0.95);
+    background: #4a2d1d;
+    transform: translateY(-5px);
 }
 
 .book-title {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #ffdfaa;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc88;
+}
+
+.read-page {
+    background: #3b2417;
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid #6b4423;
 }
 
 a {
@@ -56,15 +60,8 @@ a {
     color: inherit;
 }
 
-.read-page {
-    background: rgba(60, 35, 20, 0.9);
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
 .back {
     display: inline-block;
     margin-top: 40px;
-    color: #ffdfaa;
+    color: #ffcc88;
 }
