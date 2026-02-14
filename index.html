@@ -9,7 +9,7 @@
 
 <!-- Author Photo -->
 <div class="author-photo">
-    <img src="author.jpg" alt="Author Photo">
+    <img src="author.jpg" alt="Author">
 </div>
 
 <!-- Dark / Light Mode Button -->
@@ -20,37 +20,96 @@
 <h1>রানি মুখার্জি</h1>
 <p class="bio">শব্দে বোনা অনুভূতির ঘর</p>
 
-<h2 class="section-title">📜 কবিতা</h2>
-
-<a href="poem1.html">
-<div class="book-card">
-<div class="book-title">❝ নববর্ষ ❞</div>
-<p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab-btn active" onclick="showTab('poems')">📜 কবিতা</button>
+    <button class="tab-btn" onclick="showTab('stories')">📖 গল্প</button>
 </div>
+
+<!-- Poems Section -->
+<div id="poems" class="tab-content">
+
+<div class="book-list">
+
+<a href="poem1.html" class="book-card">
+    <div class="book-title">❝ নববর্ষ ❞</div>
+    <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
 </a>
 
-<h2 class="section-title">📖 গল্প</h2>
-
-<a href="story1.html">
-<div class="book-card">
-<div class="book-title">❝ স্বার্থ ❞</div>
-<p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-</div>
+<a href="poem2.html" class="book-card">
+    <div class="book-title">❝ স্বার্থ ❞</div>
+    <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
 </a>
 
+<!-- তুমি ভবিষ্যতে কবিতা add করবে এখানে -->
+
 </div>
 
-<!-- About Author -->
+<button class="load-btn" onclick="loadMore('poems')">Load More কবিতা</button>
+
+</div>
+
+
+<!-- Stories Section -->
+<div id="stories" class="tab-content hidden">
+
+<div class="book-list">
+
+<a href="story1.html" class="book-card">
+    <div class="book-title">❝ প্রথম গল্প ❞</div>
+    <p>একটি নীরব রাতের অজানা কাহিনী...</p>
+</a>
+
+<!-- ভবিষ্যতে গল্প add করবে এখানে -->
+
+</div>
+
+<button class="load-btn" onclick="loadMore('stories')">Load More গল্প</button>
+
+</div>
+
+</div>
+
+<!-- About Author Box -->
 <div class="about-author">
-<h3>About Author</h3>
-<p>
-রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
-তিনি লেখেন মানুষের অনুভূতি, বাস্তবতা ও নীরব কষ্টের গল্প।  
-লেখা তার কাছে আত্মার কথা বলার একমাত্র ভাষা।
-</p>
+    <h3>About Author</h3>
+    <p>
+        রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখিকা।  
+        তিনি মানুষের অনুভূতি, বাস্তবতা ও নীরব কষ্টের গল্প লেখেন।  
+        লেখাই তার আত্মপ্রকাশের ভাষা।
+    </p>
 </div>
 
-<script src="script.js"></script>
+
+<script>
+// Tabs
+function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+    document.getElementById(tab).classList.remove('hidden');
+
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+// Load More System
+function loadMore(section) {
+    alert("Future version: Auto load from database বা JSON করা যাবে.");
+}
+
+// Dark / Light Mode
+let mode = "dark";
+document.getElementById("modeToggle").onclick = function() {
+    if (mode === "dark") {
+        document.body.classList.add("light");
+        this.innerHTML = "☀️";
+        mode = "light";
+    } else {
+        document.body.classList.remove("light");
+        this.innerHTML = "🌙";
+        mode = "dark";
+    }
+};
+</script>
 
 </body>
 </html>
