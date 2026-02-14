@@ -1,115 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
                 url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
     color: #f5e6c8;
-    min-height: 100vh;
+    line-height: 1.9;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding-top: 80px;
+/* Paper texture overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/paper-2.png");
+    opacity: 0.12;
+    pointer-events: none;
 }
 
-/* Profile Image */
-.profile img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 4px solid #ffdfaa;
-    box-shadow: 0 0 30px rgba(255, 200, 120, 0.6);
-    object-fit: cover;
-    margin-bottom: 20px;
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-/* Heading */
 h1 {
-    font-size: 42px;
+    text-align: center;
+    font-size: 46px;
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 .bio {
-    font-style: italic;
+    text-align: center;
     margin-bottom: 60px;
+    font-style: italic;
     color: #e0c097;
 }
 
-/* Glass Cards */
-.card-container {
-    width: 80%;
-    max-width: 800px;
-    margin: auto;
-}
-
-.glass-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    padding: 35px;
-    border-radius: 20px;
-    margin-bottom: 30px;
+/* Library cards */
+.book-card {
+    background: rgba(70, 45, 25, 0.85);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 12px;
     transition: 0.4s;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.glass-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 200, 120, 0.15);
-}
-
-.glass-card h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-/* Floating Theme Button */
-.theme-btn {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    background: black;
-    color: #ffdfaa;
-    border: 1px solid #ffdfaa;
-    padding: 10px 18px;
-    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 223, 170, 0.1);
     cursor: pointer;
 }
 
-/* Floating About Button */
-.about-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: black;
+.book-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(90, 55, 30, 0.95);
+    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
+}
+
+.book-title {
+    font-size: 26px;
+    margin-bottom: 15px;
     color: #ffdfaa;
-    border: 1px solid #ffdfaa;
-    padding: 12px 22px;
-    border-radius: 30px;
+}
+
+a {
     text-decoration: none;
+    color: inherit;
 }
 
-/* Light Mode */
-body.light {
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
-                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-    color: #2b2b2b;
+/* Reading page */
+.read-page {
+    background: rgba(60, 35, 20, 0.9);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-body.light .glass-card {
-    background: rgba(0,0,0,0.05);
-    color: #2b2b2b;
+/* Fade-in poem lines */
+.read-page p {
+    opacity: 0;
+    animation: textFade 1.2s ease forwards;
+}
+
+.read-page p:nth-child(2) { animation-delay: 0.2s; }
+.read-page p:nth-child(3) { animation-delay: 0.4s; }
+.read-page p:nth-child(4) { animation-delay: 0.6s; }
+.read-page p:nth-child(5) { animation-delay: 0.8s; }
+
+.back {
+    display: inline-block;
+    margin-top: 40px;
+    color: #ffdfaa;
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+    }
 }
