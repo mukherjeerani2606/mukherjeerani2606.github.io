@@ -41,14 +41,6 @@ h1 {
     color: #e0c097;
 }
 
-/* Section Titles */
-.section-title {
-    font-size: 28px;
-    margin-top: 60px;
-    color: #ffdda8;
-    border-bottom: 2px solid rgba(255,220,170,0.3);
-    padding-bottom: 8px;
-}
 
 /* Book Cards */
 .book-card {
