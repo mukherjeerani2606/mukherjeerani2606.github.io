@@ -7,6 +7,11 @@
 </head>
 <body>
 
+    <div class="author-photo">
+    <img src="author.jpg" alt="Author Photo">
+</div>
+    <button id="themeToggle">🌙 Dark mode</button>
+    
 <div class="container">
 
 <h1>রানি মুখার্জি</h1>
@@ -27,6 +32,17 @@
 </a>
 
 </div>
+<script>
+const btn = document.getElementById("themeToggle");
 
+btn.onclick = () => {
+  document.body.classList.toggle("light-mode");
+  if (document.body.classList.contains("light-mode")) {
+    btn.innerText = "☀️ Light mode";
+  } else {
+    btn.innerText = "🌙 Dark mode";
+  }
+};
+</script>
 </body>
 </html>
