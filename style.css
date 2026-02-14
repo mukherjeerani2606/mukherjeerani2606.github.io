@@ -1,193 +1,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
 body {
-    margin: 0;
-    font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
-                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-    background-size: cover;
-    background-attachment: fixed;
-    color: #f5e6c8;
-    line-height: 1.9;
-    animation: fadeIn 1.5s ease-in-out;
+ margin:0;
+ font-family:'Noto Serif Bengali',serif;
+ background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+ url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+ background-size:cover;
+ background-attachment:fixed;
+ color:#f5e6c8;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("https://www.transparenttextures.com/patterns/paper-2.png");
-    opacity: 0.12;
-    pointer-events: none;
+/* Author Header */
+.author-header{
+ text-align:center;
+ padding:40px 0 10px;
+}
+.author-header.small{padding:20px 0;}
+
+.author-avatar{
+ width:120px;
+ height:120px;
+ border-radius:50%;
+ object-fit:cover;
+ border:4px solid #ffdfaa;
+ box-shadow:0 0 20px rgba(255,200,100,0.6);
 }
 
-.container {
-    max-width: 850px;
-    margin: auto;
-    padding: 60px 20px;
+.author-name{
+ font-size:32px;
+ margin-top:10px;
+ font-weight:bold;
 }
 
-h1 {
-    text-align: center;
-    font-size: 46px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+.author-bio{
+ font-style:italic;
+ color:#e0c097;
 }
 
-.bio {
-    text-align: center;
-    margin-bottom: 60px;
-    font-style: italic;
-    color: #e0c097;
+/* Container */
+.container{
+ max-width:850px;
+ margin:auto;
+ padding:40px 20px;
 }
 
-.book-card {
-    background: rgba(70, 45, 25, 0.85);
-    padding: 30px;
-    margin: 30px 0;
-    border-radius: 12px;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 223, 170, 0.1);
-    cursor: pointer;
+/* Book Cards */
+.book-card{
+ background:rgba(70,45,25,0.85);
+ padding:25px;
+ margin:25px 0;
+ border-radius:12px;
+ transition:.3s;
+ box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.book-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    background: rgba(90, 55, 30, 0.95);
-    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
+.book-card:hover{
+ transform:scale(1.02);
+ background:rgba(90,55,30,0.95);
 }
 
-.book-title {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #ffdfaa;
+.book-title{
+ font-size:24px;
+ color:#ffdfaa;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+a{text-decoration:none;color:inherit}
 
-.read-page {
-    background: rgba(60, 35, 20, 0.9);
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-.read-page p {
-    opacity: 0;
-    animation: textFade 1.2s ease forwards;
-}
-
-.read-page p:nth-child(2){animation-delay:0.2s;}
-.read-page p:nth-child(3){animation-delay:0.4s;}
-.read-page p:nth-child(4){animation-delay:0.6s;}
-.read-page p:nth-child(5){animation-delay:0.8s;}
-
-.back {
-    display: inline-block;
-    margin-top: 40px;
-    color: #ffdfaa;
-    font-size: 18px;
-}
-
-/* Author Photo */
-.author-photo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-.author-photo img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid #ffdfaa;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+/* Reading Page */
+.read-page{
+ background:rgba(60,35,20,0.9);
+ padding:40px;
+ border-radius:12px;
 }
 
 /* Theme Button */
-#themeToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.6);
-    color: #ffdfaa;
-    border: 1px solid #ffdfaa;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 1000;
+#themeToggle{
+ position:fixed;
+ top:20px;
+ right:20px;
+ padding:10px 18px;
+ background:black;
+ color:#ffdfaa;
+ border:1px solid #ffdfaa;
+ border-radius:20px;
+ cursor:pointer;
 }
 
 /* Light Mode */
-.light-mode {
-    background: #f4efe6;
-    color: #2c1b10;
+.light-mode{
+ background:#f4efe6;
+ color:#2c1b10;
 }
-
 .light-mode .book-card,
-.light-mode .read-page {
-    background: rgba(255,255,255,0.85);
-    color: #2c1b10;
+.light-mode .read-page{
+ background:white;
+ color:#2c1b10;
 }
 
-/* About Author Button */
-#aboutBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.6);
-    color: #ffdfaa;
-    padding: 12px 20px;
-    border-radius: 20px;
-    border: 1px solid #ffdfaa;
-    cursor: pointer;
-    z-index: 1000;
+/* About Button */
+#aboutBtn{
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ padding:12px 20px;
+ background:black;
+ color:#ffdfaa;
+ border:1px solid #ffdfaa;
+ border-radius:20px;
+ cursor:pointer;
 }
 
 /* Popup */
-#aboutPopup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
+#aboutPopup{
+ display:none;
+ position:fixed;
+ top:0;left:0;
+ width:100%;height:100%;
+ background:rgba(0,0,0,0.8);
+ align-items:center;
+ justify-content:center;
 }
 
-.about-box {
-    background: #3a2415;
-    padding: 30px;
-    max-width: 400px;
-    border-radius: 12px;
-    color: #ffdfaa;
-    position: relative;
+.about-box{
+ background:#3a2415;
+ padding:25px;
+ border-radius:12px;
+ max-width:400px;
+ color:#ffdfaa;
+ position:relative;
 }
 
-#closeAbout {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
+#closeAbout{
+ position:absolute;
+ top:10px;
+ right:15px;
+ cursor:pointer;
 }
 
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(10px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
-@keyframes textFade {
-    to {opacity:1;}
+/* Back link */
+.back{
+ display:block;
+ margin-top:20px;
+ color:#ffdfaa;
 }
