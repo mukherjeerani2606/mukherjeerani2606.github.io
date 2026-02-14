@@ -3,97 +3,81 @@
 body {
     margin: 0;
     font-family: 'Noto Serif Bengali', serif;
-    background: #1a0f08;
+    background: linear-gradient(rgba(20,10,5,0.92), rgba(20,10,5,0.92)),
+    url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: #f5e6c8;
+    line-height: 1.9;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 40px;
-    background: #2c170b;
-    border-bottom: 2px solid #6b3a1e;
-}
-
-header h1 {
-    font-size: 45px;
-}
-
-header p {
-    font-style: italic;
-    color: #d4b08a;
-}
-
-/* Navbar */
-nav {
-    text-align: center;
-    background: #3b1e10;
-    padding: 12px;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #ffdfaa;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* Book Library */
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 40px;
+    padding: 70px 20px;
 }
 
+h1 {
+    text-align: center;
+    font-size: 52px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.bio {
+    text-align: center;
+    margin-bottom: 70px;
+    font-style: italic;
+    color: #d8b890;
+    font-size: 18px;
+}
+
+/* Book Cards */
 .book-card {
-    background: #4a2814;
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    background: rgba(50, 30, 15, 0.88);
+    padding: 35px;
+    margin: 35px 0;
+    border-radius: 15px;
+    transition: 0.4s;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    border-left: 6px solid #b87a3d;
 }
 
 .book-card:hover {
-    background: #623318;
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background: rgba(70, 40, 20, 0.95);
 }
 
-.book-card h2 {
-    color: #ffdfaa;
+.book-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #ffdda8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Reading Page */
-.read-container {
-    max-width: 850px;
-    margin: auto;
-    padding: 50px;
-    font-size: 20px;
-    line-height: 2;
+.read-page {
+    background: rgba(40, 22, 12, 0.93);
+    padding: 60px;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,220,170,0.2);
 }
 
 .back {
     display: inline-block;
-    margin-top: 30px;
-    color: #ffdfaa;
-    text-decoration: none;
+    margin-top: 40px;
+    color: #ffdda8;
+    font-size: 18px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c170b;
-    margin-top: 50px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    header h1 { font-size: 28px; }
-    .read-container { font-size: 17px; }
+/* Mobile */
+@media(max-width:600px){
+    h1{font-size:32px;}
+    .read-page{padding:30px;}
 }
