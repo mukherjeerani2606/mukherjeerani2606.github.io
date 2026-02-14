@@ -9,13 +9,17 @@ body {
     background-attachment: fixed;
     color: #f5e6c8;
     line-height: 1.9;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Paper Texture */
+/* Paper texture overlay */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url("https://www.transparenttextures.com/patterns/paper-2.png");
     opacity: 0.12;
     pointer-events: none;
@@ -41,8 +45,7 @@ h1 {
     color: #e0c097;
 }
 
-
-/* Book Cards */
+/* Library cards */
 .book-card {
     background: rgba(70, 45, 25, 0.85);
     padding: 30px;
@@ -50,12 +53,15 @@ h1 {
     border-radius: 12px;
     transition: 0.4s;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 223, 170, 0.1);
     cursor: pointer;
 }
 
 .book-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.01);
     background: rgba(90, 55, 30, 0.95);
+    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
 }
 
 .book-title {
@@ -69,13 +75,24 @@ a {
     color: inherit;
 }
 
-/* Reading Page */
+/* Reading page */
 .read-page {
     background: rgba(60, 35, 20, 0.9);
     padding: 50px;
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
+
+/* Fade-in poem lines */
+.read-page p {
+    opacity: 0;
+    animation: textFade 1.2s ease forwards;
+}
+
+.read-page p:nth-child(2) { animation-delay: 0.2s; }
+.read-page p:nth-child(3) { animation-delay: 0.4s; }
+.read-page p:nth-child(4) { animation-delay: 0.6s; }
+.read-page p:nth-child(5) { animation-delay: 0.8s; }
 
 .back {
     display: inline-block;
@@ -84,67 +101,20 @@ a {
     font-size: 18px;
 }
 
-/* Author Photo */
-.author-photo {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.author-photo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid #ffdfaa;
-}
-
-/* Mode Button */
-#modeToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.7);
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    color: #ffdfaa;
-    border-radius: 50px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* About Author Box */
-.about-author {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    background: rgba(60,35,20,0.85);
-    padding: 15px 20px;
-    border-radius: 12px;
-    width: 260px;
-    font-size: 14px;
-    border: 1px solid rgba(255,220,170,0.2);
-}
-
-.about-author h3 {
-    margin-top: 0;
-    color: #ffdda8;
-}
-
-/* Light Mode */
-.light-mode {
-    background: #f5efe6 !important;
-    color: #222 !important;
-}
-
-.light-mode .book-card,
-.light-mode .read-page {
-    background: rgba(255,255,255,0.9);
-    color: #222;
-}
-
-.light-mode h1,
-.light-mode .book-title {
-    color: #5a2c00;
+@keyframes textFade {
+    to {
+        opacity: 1;
+    }
 }
