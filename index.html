@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<title>আমার সাহিত্য ভুবন</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>আমার সাহিত্য ভুবন</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header>
+    <h1>রানি মুখার্জি</h1>
+    <p>শব্দে বোনা অনুভূতির ঘর</p>
+</header>
+
+<nav>
+    <a href="#">হোম</a>
+    <a href="#">কবিতা</a>
+    <a href="#">গল্প</a>
+    <a href="#">আমার সম্পর্কে</a>
+</nav>
+
 <div class="container">
 
-<h1>রানি মুখার্জি</h1>
-<p class="bio">শব্দে বোনা অনুভূতির ঘর</p>
+<div class="book-card" onclick="location.href='poem1.html'">
+    <h2>নববর্ষ</h2>
+    <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
+</div>
 
-<a href="poem1.html">
-    <div class="book-card">
-        <div class="book-title">❝ নববর্ষ ❞</div>
-        <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
-    </div>
-</a>
-
-<a href="poem2.html">
-    <div class="book-card">
-        <div class="book-title">❝ স্বার্থ ❞</div>
-        <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-    </div>
-</a>
+<div class="book-card" onclick="location.href='story1.html'">
+    <h2>স্বার্থ</h2>
+    <p>মানুষের স্বার্থপরতার বাস্তব ছবি...</p>
+</div>
 
 </div>
 
+<footer>
+    <p>© 2026 Rani Mukherjee | Bengali Literature Library</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
