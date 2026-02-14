@@ -1,151 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
- font-family:'Noto Serif Bengali',serif;
- background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
- url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
- background-size:cover;
- background-attachment:fixed;
- color:#f5e6c8;
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: url('library.jpg') no-repeat center center/cover;
+    color: #f5e6d3;
+    transition: 0.3s;
 }
 
-/* Top bar */
-.top-bar{
- position:fixed;
- top:15px;
- left:15px;
- right:15px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- z-index:999;
+/* Dark Mode */
+body.dark {
+    background-color: #111;
+    background-image: none;
+    color: #ddd;
 }
 
-/* Avatar */
-.avatar{
- width:70px;
- height:70px;
- border-radius:50%;
- object-fit:cover;
- border:2px solid #ffdfaa;
- box-shadow:0 0 15px rgba(255,200,100,.6);
- background:white;
+/* Author Photo */
+.author-photo {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+}
+.author-photo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #ffcc99;
 }
 
-/* Theme button */
-#themeToggle{
- padding:10px 14px;
- border-radius:50%;
- border:none;
- cursor:pointer;
- background:black;
- color:#ffdfaa;
- font-size:18px;
+/* Theme Button */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    background: black;
+    color: gold;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Hero section */
-.hero{
- text-align:center;
- padding-top:140px;
+/* Main Container */
+.container {
+    text-align: center;
+    padding-top: 150px;
 }
 
-.hero h1{
- font-size:40px;
- letter-spacing:2px;
+/* Title */
+h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
 }
 
-.hero p{
- font-style:italic;
- color:#e0c097;
- margin-top:10px;
-}
-
-/* Container */
-.container{
- max-width:850px;
- margin:auto;
- padding:50px 20px;
+/* Bio */
+.bio {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
 /* Cards */
-.card{
- display:block;
- background:rgba(70,45,25,.85);
- padding:25px;
- margin:20px 0;
- border-radius:12px;
- text-decoration:none;
- color:#f5e6c8;
- transition:.3s;
+.card-link {
+    text-decoration: none;
 }
 
-.card:hover{
- transform:scale(1.02);
- background:rgba(90,55,30,.95);
+.book-card {
+    width: 60%;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-/* Reading page */
-.read{
- background:rgba(60,35,20,.9);
- border-radius:12px;
- padding:30px;
+.book-card:hover {
+    transform: scale(1.03);
+    background: rgba(255,165,0,0.3);
 }
 
-/* About button */
-#aboutBtn{
- position:fixed;
- bottom:20px;
- right:20px;
- padding:12px 20px;
- background:black;
- color:#ffdfaa;
- border:1px solid #ffdfaa;
- border-radius:20px;
- cursor:pointer;
+/* Card Title */
+.book-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+}
+
+/* About Button */
+#aboutBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 12px 22px;
+    border-radius: 20px;
+    border: none;
+    background: black;
+    color: gold;
+    cursor: pointer;
 }
 
 /* Popup */
-#aboutPopup{
- display:none;
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.8);
- justify-content:center;
- align-items:center;
+#aboutPopup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
 }
 
-.popup-box{
- background:#3a2415;
- padding:25px;
- border-radius:12px;
- color:#ffdfaa;
- width:350px;
- position:relative;
+/* Popup Box */
+.popup-content {
+    background: #111;
+    color: gold;
+    padding: 25px;
+    width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
 }
 
-#closeAbout{
- position:absolute;
- top:10px;
- right:15px;
- cursor:pointer;
-}
-
-/* Light Mode */
-.light{
- background:#f4efe6;
- color:#2c1b10;
-}
-
-.light .card,
-.light .read{
- background:white;
- color:#2c1b10;
-}
-
-.light #themeToggle,
-.light #aboutBtn{
- background:white;
- color:black;
+/* Close Button */
+#closePopup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 22px;
 }
