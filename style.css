@@ -1,103 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
-body {
- margin:0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
  font-family:'Noto Serif Bengali',serif;
- background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+ background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
  url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
  background-size:cover;
  background-attachment:fixed;
  color:#f5e6c8;
 }
 
-/* Author Header */
-.author-header{
- text-align:center;
- padding:40px 0 10px;
+/* Top bar */
+.top-bar{
+ position:fixed;
+ top:15px;
+ left:15px;
+ right:15px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ z-index:999;
 }
-.author-header.small{padding:20px 0;}
 
-.author-avatar{
- width:120px;
- height:120px;
+/* Avatar */
+.avatar{
+ width:70px;
+ height:70px;
  border-radius:50%;
  object-fit:cover;
- border:4px solid #ffdfaa;
- box-shadow:0 0 20px rgba(255,200,100,0.6);
+ border:2px solid #ffdfaa;
+ box-shadow:0 0 15px rgba(255,200,100,.6);
+ background:white;
 }
 
-.author-name{
- font-size:32px;
- margin-top:10px;
- font-weight:bold;
+/* Theme button */
+#themeToggle{
+ padding:10px 14px;
+ border-radius:50%;
+ border:none;
+ cursor:pointer;
+ background:black;
+ color:#ffdfaa;
+ font-size:18px;
 }
 
-.author-bio{
+/* Hero section */
+.hero{
+ text-align:center;
+ padding-top:140px;
+}
+
+.hero h1{
+ font-size:40px;
+ letter-spacing:2px;
+}
+
+.hero p{
  font-style:italic;
  color:#e0c097;
+ margin-top:10px;
 }
 
 /* Container */
 .container{
  max-width:850px;
  margin:auto;
- padding:40px 20px;
+ padding:50px 20px;
 }
 
-/* Book Cards */
-.book-card{
- background:rgba(70,45,25,0.85);
+/* Cards */
+.card{
+ display:block;
+ background:rgba(70,45,25,.85);
  padding:25px;
- margin:25px 0;
+ margin:20px 0;
  border-radius:12px;
+ text-decoration:none;
+ color:#f5e6c8;
  transition:.3s;
- box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.book-card:hover{
+.card:hover{
  transform:scale(1.02);
- background:rgba(90,55,30,0.95);
+ background:rgba(90,55,30,.95);
 }
 
-.book-title{
- font-size:24px;
- color:#ffdfaa;
-}
-
-a{text-decoration:none;color:inherit}
-
-/* Reading Page */
-.read-page{
- background:rgba(60,35,20,0.9);
- padding:40px;
+/* Reading page */
+.read{
+ background:rgba(60,35,20,.9);
  border-radius:12px;
+ padding:30px;
 }
 
-/* Theme Button */
-#themeToggle{
- position:fixed;
- top:20px;
- right:20px;
- padding:10px 18px;
- background:black;
- color:#ffdfaa;
- border:1px solid #ffdfaa;
- border-radius:20px;
- cursor:pointer;
-}
-
-/* Light Mode */
-.light-mode{
- background:#f4efe6;
- color:#2c1b10;
-}
-.light-mode .book-card,
-.light-mode .read-page{
- background:white;
- color:#2c1b10;
-}
-
-/* About Button */
+/* About button */
 #aboutBtn{
  position:fixed;
  bottom:20px;
@@ -114,19 +110,18 @@ a{text-decoration:none;color:inherit}
 #aboutPopup{
  display:none;
  position:fixed;
- top:0;left:0;
- width:100%;height:100%;
- background:rgba(0,0,0,0.8);
- align-items:center;
+ inset:0;
+ background:rgba(0,0,0,.8);
  justify-content:center;
+ align-items:center;
 }
 
-.about-box{
+.popup-box{
  background:#3a2415;
  padding:25px;
  border-radius:12px;
- max-width:400px;
  color:#ffdfaa;
+ width:350px;
  position:relative;
 }
 
@@ -137,9 +132,20 @@ a{text-decoration:none;color:inherit}
  cursor:pointer;
 }
 
-/* Back link */
-.back{
- display:block;
- margin-top:20px;
- color:#ffdfaa;
+/* Light Mode */
+.light{
+ background:#f4efe6;
+ color:#2c1b10;
+}
+
+.light .card,
+.light .read{
+ background:white;
+ color:#2c1b10;
+}
+
+.light #themeToggle,
+.light #aboutBtn{
+ background:white;
+ color:black;
 }
