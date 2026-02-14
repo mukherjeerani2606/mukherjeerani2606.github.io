@@ -1,70 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
+:root {
+  --bg: #1c0f08;
+  --card: rgba(90,55,30,0.85);
+  --text: #f5e6c8;
+}
+
+body.light {
+  --bg: #f5e6c8;
+  --card: white;
+  --text: #1c0f08;
+}
+
 body {
-    margin: 0;
-    font-family: 'Noto Serif Bengali', serif;
-    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
-                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-    background-size: cover;
-    background-attachment: fixed;
-    color: #f5e6c8;
-    line-height: 1.9;
+  margin: 0;
+  font-family: 'Noto Serif Bengali', serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
 }
 
 .container {
-    max-width: 850px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 46px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.bio {
-    text-align: center;
-    margin-bottom: 60px;
-    font-style: italic;
-    color: #e0c097;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .book-card {
-    background: rgba(70, 45, 25, 0.85);
-    padding: 30px;
-    margin: 30px 0;
-    border-radius: 12px;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: block;
+  background: var(--card);
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
 }
 
 .book-card:hover {
-    transform: translateY(-6px);
-    background: rgba(90, 55, 30, 0.95);
+  transform: scale(1.02);
 }
 
-.book-title {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #ffdfaa;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.read-page {
-    background: rgba(60, 35, 20, 0.9);
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-.back {
-    display: inline-block;
-    margin-top: 40px;
-    color: #ffdfaa;
+#themeToggle {
+  padding: 10px 15px;
+  cursor: pointer;
 }
