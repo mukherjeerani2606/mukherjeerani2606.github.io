@@ -1,151 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
- font-family:'Noto Serif Bengali',serif;
- background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
- url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
- background-size:cover;
- background-attachment:fixed;
- color:#f5e6c8;
+body {
+    margin: 0;
+    font-family: 'Noto Serif Bengali', serif;
+    background: linear-gradient(rgba(40,25,15,0.85), rgba(40,25,15,0.85)),
+                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f5e6c8;
+    line-height: 1.9;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Top bar */
-.top-bar{
- position:fixed;
- top:15px;
- left:15px;
- right:15px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- z-index:999;
+/* Paper texture overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/paper-2.png");
+    opacity: 0.12;
+    pointer-events: none;
 }
 
-/* Avatar */
-.avatar{
- width:70px;
- height:70px;
- border-radius:50%;
- object-fit:cover;
- border:2px solid #ffdfaa;
- box-shadow:0 0 15px rgba(255,200,100,.6);
- background:white;
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-/* Theme button */
-#themeToggle{
- padding:10px 14px;
- border-radius:50%;
- border:none;
- cursor:pointer;
- background:black;
- color:#ffdfaa;
- font-size:18px;
+h1 {
+    text-align: center;
+    font-size: 46px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-/* Hero section */
-.hero{
- text-align:center;
- padding-top:140px;
+.bio {
+    text-align: center;
+    margin-bottom: 60px;
+    font-style: italic;
+    color: #e0c097;
 }
 
-.hero h1{
- font-size:40px;
- letter-spacing:2px;
+/* Library cards */
+.book-card {
+    background: rgba(70, 45, 25, 0.85);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 12px;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 223, 170, 0.1);
+    cursor: pointer;
 }
 
-.hero p{
- font-style:italic;
- color:#e0c097;
- margin-top:10px;
+.book-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(90, 55, 30, 0.95);
+    box-shadow: 0 0 25px rgba(255, 200, 120, 0.3);
 }
 
-/* Container */
-.container{
- max-width:850px;
- margin:auto;
- padding:50px 20px;
+.book-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #ffdfaa;
 }
 
-/* Cards */
-.card{
- display:block;
- background:rgba(70,45,25,.85);
- padding:25px;
- margin:20px 0;
- border-radius:12px;
- text-decoration:none;
- color:#f5e6c8;
- transition:.3s;
-}
-
-.card:hover{
- transform:scale(1.02);
- background:rgba(90,55,30,.95);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Reading page */
-.read{
- background:rgba(60,35,20,.9);
- border-radius:12px;
- padding:30px;
+.read-page {
+    background: rgba(60, 35, 20, 0.9);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* About button */
-#aboutBtn{
- position:fixed;
- bottom:20px;
- right:20px;
- padding:12px 20px;
- background:black;
- color:#ffdfaa;
- border:1px solid #ffdfaa;
- border-radius:20px;
- cursor:pointer;
+/* Fade-in poem lines */
+.read-page p {
+    opacity: 0;
+    animation: textFade 1.2s ease forwards;
 }
 
-/* Popup */
-#aboutPopup{
- display:none;
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.8);
- justify-content:center;
- align-items:center;
+.read-page p:nth-child(2) { animation-delay: 0.2s; }
+.read-page p:nth-child(3) { animation-delay: 0.4s; }
+.read-page p:nth-child(4) { animation-delay: 0.6s; }
+.read-page p:nth-child(5) { animation-delay: 0.8s; }
+
+.back {
+    display: inline-block;
+    margin-top: 40px;
+    color: #ffdfaa;
+    font-size: 18px;
 }
 
-.popup-box{
- background:#3a2415;
- padding:25px;
- border-radius:12px;
- color:#ffdfaa;
- width:350px;
- position:relative;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#closeAbout{
- position:absolute;
- top:10px;
- right:15px;
- cursor:pointer;
-}
-
-/* Light Mode */
-.light{
- background:#f4efe6;
- color:#2c1b10;
-}
-
-.light .card,
-.light .read{
- background:white;
- color:#2c1b10;
-}
-
-.light #themeToggle,
-.light #aboutBtn{
- background:white;
- color:black;
+@keyframes textFade {
+    to {
+        opacity: 1;
+    }
 }
