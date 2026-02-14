@@ -7,6 +7,12 @@
 </head>
 <body>
 
+<div class="author-photo">
+    <img src="author.jpg" alt="Author Photo">
+</div>
+
+<button id="themeToggle">🌙 Dark mode</button>
+
 <div class="container">
 <div class="read-page">
 
@@ -22,7 +28,7 @@
 <p>
 ঘরে আনা হচ্ছে মাংস মিষ্টি <br>
 যাতে পড়ে লোকের দৃষ্টি <br>
-হোয়াটস্অ্যাপ, ভিডিও কল, ফেসবুক <br>
+হোয়াটসঅ্যাপ, ভিডিও কল, ফেসবুক <br>
 নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
 </p>
 
@@ -42,6 +48,14 @@
 
 </div>
 </div>
+
+<script>
+const btn = document.getElementById("themeToggle");
+btn.onclick = () => {
+  document.body.classList.toggle("light-mode");
+  btn.innerText = document.body.classList.contains("light-mode") ? "☀️ Light mode" : "🌙 Dark mode";
+};
+</script>
 
 </body>
 </html>
