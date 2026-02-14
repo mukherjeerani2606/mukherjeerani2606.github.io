@@ -7,50 +7,61 @@
 </head>
 <body>
 
-<!-- Author Photo -->
-<div class="author-photo">
-    <img src="author.jpg" alt="Author Photo">
+<!-- Top Author Header -->
+<div class="author-header">
+    <img src="author.jpg" class="author-avatar">
+    <div class="author-name">রানি মুখার্জি</div>
+    <div class="author-bio">শব্দে বোনা অনুভূতির ঘর</div>
 </div>
 
-<!-- Dark / Light Mode Button -->
-<button id="modeToggle">🌙</button>
+<!-- Theme Button -->
+<button id="themeToggle">🌙 Dark</button>
 
 <div class="container">
 
-<h1>রানি মুখার্জি</h1>
-<p class="bio">শব্দে বোনা অনুভূতির ঘর</p>
-
-<h2 class="section-title">📜 কবিতা</h2>
-
 <a href="poem1.html">
 <div class="book-card">
-<div class="book-title">❝ নববর্ষ ❞</div>
-<p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
+    <div class="book-title">❝ নববর্ষ ❞</div>
+    <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
 </div>
 </a>
 
-<h2 class="section-title">📖 গল্প</h2>
-
-<a href="story1.html">
+<a href="poem2.html">
 <div class="book-card">
-<div class="book-title">❝ স্বার্থ ❞</div>
-<p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
+    <div class="book-title">❝ স্বার্থ ❞</div>
+    <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
 </div>
 </a>
 
 </div>
 
-<!-- About Author -->
-<div class="about-author">
-<h3>About Author</h3>
+<!-- About Button -->
+<div id="aboutBtn">About Author</div>
+
+<div id="aboutPopup">
+<div class="about-box">
+<span id="closeAbout">✖</span>
+<h2>About the Author</h2>
 <p>
 রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
-তিনি লেখেন মানুষের অনুভূতি, বাস্তবতা ও নীরব কষ্টের গল্প।  
-লেখা তার কাছে আত্মার কথা বলার একমাত্র ভাষা।
+তিনি সমাজ, ভালোবাসা ও মানুষের অনুভূতি নিয়ে লেখালেখি করতে ভালোবাসেন।  
+লেখা তাঁর কাছে আত্মার প্রকাশ।
 </p>
 </div>
+</div>
 
-<script src="script.js"></script>
+<script>
+// Theme
+const btn = document.getElementById("themeToggle");
+btn.onclick = () => {
+ document.body.classList.toggle("light-mode");
+ btn.innerText = document.body.classList.contains("light-mode") ? "☀️ Light" : "🌙 Dark";
+};
+
+// About popup
+document.getElementById("aboutBtn").onclick = () => aboutPopup.style.display="flex";
+document.getElementById("closeAbout").onclick = () => aboutPopup.style.display="none";
+</script>
 
 </body>
 </html>
