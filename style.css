@@ -1,128 +1,115 @@
-:root {
-    --bg-dark: #0f0c09;
-    --bg-light: #f4efe7;
-    --text-dark: #f5e6c8;
-    --text-light: #2b1d12;
-    --accent: #d4a762;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
+body {
     font-family: 'Noto Serif Bengali', serif;
-    background:#000;
-    color:#f5e6c8;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f5e6c8;
+    min-height: 100vh;
 }
 
-/* HERO SECTION */
-.hero{
-    height:100vh;
-    background: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding-top: 80px;
 }
 
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.65);
+/* Profile Image */
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #ffdfaa;
+    box-shadow: 0 0 30px rgba(255, 200, 120, 0.6);
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
+/* Heading */
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.profile{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    border:4px solid #f5d38c;
-    margin-bottom:15px;
+.bio {
+    font-style: italic;
+    margin-bottom: 60px;
+    color: #e0c097;
 }
 
-.hero h1{
-    font-size:48px;
-    margin-bottom:10px;
+/* Glass Cards */
+.card-container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
 }
 
-.hero p{
-    font-size:18px;
-    opacity:0.9;
+.glass-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* DARK BUTTON */
-.top-btn{
-    position:absolute;
-    top:20px;
-    right:30px;
-    z-index:3;
+.glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 200, 120, 0.15);
 }
 
-.dark-btn{
-    background:black;
-    border:1px solid #f5d38c;
-    color:#f5d38c;
-    padding:8px 18px;
-    border-radius:25px;
-    cursor:pointer;
+.glass-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-/* BOOK SECTION */
-.container{
-    width:90%;
-    max-width:900px;
-    margin:-120px auto 80px auto;
-    position:relative;
-    z-index:5;
+/* Floating Theme Button */
+.theme-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: black;
+    color: #ffdfaa;
+    border: 1px solid #ffdfaa;
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+/* Floating About Button */
+.about-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: black;
+    color: #ffdfaa;
+    border: 1px solid #ffdfaa;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
 }
 
-.book-card{
-    background:rgba(92, 49, 16, 0.75);
-    padding:40px;
-    border-radius:20px;
-    margin-bottom:40px;
-    backdrop-filter: blur(8px);
-    transition:0.3s;
+/* Light Mode */
+body.light {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    color: #2b2b2b;
 }
 
-.book-card:hover{
-    transform:translateY(-6px);
-    background:rgba(120, 65, 25, 0.85);
+body.light .glass-card {
+    background: rgba(0,0,0,0.05);
+    color: #2b2b2b;
 }
-
-.book-title{
-    font-size:24px;
-    margin-bottom:12px;
-}
-
-.book-card p{
-    opacity:0.9;
-}
-
-/* ABOUT BUTTON */
-.about-btn{
-    position:fixed;
-    bottom:30px;
-    right:40px;
-    background:black;
-    border:1px solid #f5d38c;
-    color:#f5d38c;
-    padding:12px 24px;
-    border-radius:30px;
-}
-
