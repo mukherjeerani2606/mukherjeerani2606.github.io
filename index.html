@@ -7,60 +7,62 @@
 </head>
 <body>
 
-<!-- Top Author Header -->
-<div class="author-header">
-    <img src="author.jpg" class="author-avatar">
-    <div class="author-name">রানি মুখার্জি</div>
-    <div class="author-bio">শব্দে বোনা অনুভূতির ঘর</div>
+<!-- Top Bar -->
+<div class="top-bar">
+    <img src="author.jpg" class="avatar">
+    <button id="themeToggle">🌙</button>
 </div>
 
-<!-- Theme Button -->
-<button id="themeToggle">🌙 Dark</button>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>রানি মুখার্জি</h1>
+    <p>শব্দে বোনা অনুভূতির ঘর</p>
+</section>
 
 <div class="container">
 
-<a href="poem1.html">
-<div class="book-card">
-    <div class="book-title">❝ নববর্ষ ❞</div>
+<a href="poem1.html" class="card">
+    <h2>❝ নববর্ষ ❞</h2>
     <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
-</div>
 </a>
 
-<a href="poem2.html">
-<div class="book-card">
-    <div class="book-title">❝ স্বার্থ ❞</div>
+<a href="poem2.html" class="card">
+    <h2>❝ স্বার্থ ❞</h2>
     <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-</div>
 </a>
 
 </div>
 
-<!-- About Button -->
+<!-- About Author -->
 <div id="aboutBtn">About Author</div>
 
 <div id="aboutPopup">
-<div class="about-box">
-<span id="closeAbout">✖</span>
-<h2>About the Author</h2>
-<p>
-রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
-তিনি সমাজ, ভালোবাসা ও মানুষের অনুভূতি নিয়ে লেখালেখি করতে ভালোবাসেন।  
-লেখা তাঁর কাছে আত্মার প্রকাশ।
-</p>
-</div>
+  <div class="popup-box">
+    <span id="closeAbout">✖</span>
+    <h3>About the Author</h3>
+    <p>
+    রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
+    সমাজ, অনুভূতি ও মানুষের অন্তর্দ্বন্দ্ব নিয়ে লেখালেখি করেন।  
+    লেখাই তাঁর আত্মার ভাষা।
+    </p>
+  </div>
 </div>
 
 <script>
-// Theme
-const btn = document.getElementById("themeToggle");
-btn.onclick = () => {
- document.body.classList.toggle("light-mode");
- btn.innerText = document.body.classList.contains("light-mode") ? "☀️ Light" : "🌙 Dark";
+/* Theme */
+const t = document.getElementById("themeToggle");
+t.onclick = () => {
+ document.body.classList.toggle("light");
+ t.innerHTML = document.body.classList.contains("light") ? "☀️" : "🌙";
 };
 
-// About popup
-document.getElementById("aboutBtn").onclick = () => aboutPopup.style.display="flex";
-document.getElementById("closeAbout").onclick = () => aboutPopup.style.display="none";
+/* About popup */
+const aboutBtn = document.getElementById("aboutBtn");
+const popup = document.getElementById("aboutPopup");
+const close = document.getElementById("closeAbout");
+
+aboutBtn.onclick = ()=> popup.style.display="flex";
+close.onclick = ()=> popup.style.display="none";
 </script>
 
 </body>
