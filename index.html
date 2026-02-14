@@ -7,11 +7,14 @@
 </head>
 <body>
 
-    <div class="author-photo">
+<!-- Author Photo -->
+<div class="author-photo">
     <img src="author.jpg" alt="Author Photo">
 </div>
-    <button id="themeToggle">🌙 Dark mode</button>
-    
+
+<!-- Dark / Light Mode Button -->
+<button id="themeToggle">🌙 Dark mode</button>
+
 <div class="container">
 
 <h1>রানি মুখার্জি</h1>
@@ -32,9 +35,25 @@
 </a>
 
 </div>
-<script>
-const btn = document.getElementById("themeToggle");
 
+<!-- About Author Button -->
+<div id="aboutBtn">About Author</div>
+
+<div id="aboutPopup">
+  <div class="about-box">
+    <span id="closeAbout">✖</span>
+    <h2>About the Author</h2>
+    <p>
+      রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
+      তিনি মানুষের অনুভূতি, সমাজ, ভালোবাসা ও বাস্তবতার গল্প শব্দে বন্দী করতে ভালোবাসেন।  
+      লেখালেখি তাঁর আত্মার ভাষা, যেখানে নীরব অনুভূতিগুলো কথা বলে।
+    </p>
+  </div>
+</div>
+
+<script>
+/* Theme Toggle */
+const btn = document.getElementById("themeToggle");
 btn.onclick = () => {
   document.body.classList.toggle("light-mode");
   if (document.body.classList.contains("light-mode")) {
@@ -43,6 +62,15 @@ btn.onclick = () => {
     btn.innerText = "🌙 Dark mode";
   }
 };
+
+/* About Popup */
+const aboutBtn = document.getElementById("aboutBtn");
+const aboutPopup = document.getElementById("aboutPopup");
+const closeAbout = document.getElementById("closeAbout");
+
+aboutBtn.onclick = () => aboutPopup.style.display = "flex";
+closeAbout.onclick = () => aboutPopup.style.display = "none";
 </script>
+
 </body>
 </html>
