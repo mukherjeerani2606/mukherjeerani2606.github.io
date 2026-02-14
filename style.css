@@ -10,6 +10,15 @@ body{
  background-attachment:fixed;
  color:#f5e6c8;
 }
+/* ===== Smooth Page Transition ===== */
+body{
+ opacity:0;
+ transition:opacity .4s ease-in-out;
+}
+
+body.loaded{
+ opacity:1;
+}
 
 /* Top bar */
 .top-bar{
