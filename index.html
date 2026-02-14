@@ -2,31 +2,50 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>আমার সাহিত্য ভুবন</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<header class="hero">
 
-<h1>রানি মুখার্জি</h1>
-<p class="bio">শব্দে বোনা অনুভূতির ঘর</p>
+    <div class="overlay"></div>
 
-<a href="poem1.html">
-    <div class="book-card">
-        <div class="book-title">❝ নববর্ষ ❞</div>
+    <div class="hero-content">
+        <img src="https://via.placeholder.com/150" class="profile" alt="Author">
+
+        <h1>রানি মুখার্জি</h1>
+        <p class="tagline">শব্দে বোনা অনুভূতির ঘর</p>
+
+        <button id="themeToggle" class="theme-btn">Dark</button>
+    </div>
+
+</header>
+
+
+<main class="library">
+
+    <a href="poem1.html" class="card">
+        <h2>❝ নববর্ষ ❞</h2>
         <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
-    </div>
-</a>
+    </a>
 
-<a href="poem2.html">
-    <div class="book-card">
-        <div class="book-title">❝ স্বার্থ ❞</div>
+    <a href="poem2.html" class="card">
+        <h2>❝ স্বার্থ ❞</h2>
         <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-    </div>
-</a>
+    </a>
 
-</div>
+</main>
+
+<footer>
+    <a href="#" class="about-btn">About Author</a>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
