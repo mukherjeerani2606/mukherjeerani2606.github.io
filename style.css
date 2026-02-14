@@ -12,7 +12,6 @@ body {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Paper texture overlay */
 body::before {
     content: "";
     position: fixed;
@@ -45,7 +44,6 @@ h1 {
     color: #e0c097;
 }
 
-/* Library cards */
 .book-card {
     background: rgba(70, 45, 25, 0.85);
     padding: 30px;
@@ -75,7 +73,6 @@ a {
     color: inherit;
 }
 
-/* Reading page */
 .read-page {
     background: rgba(60, 35, 20, 0.9);
     padding: 50px;
@@ -83,16 +80,15 @@ a {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* Fade-in poem lines */
 .read-page p {
     opacity: 0;
     animation: textFade 1.2s ease forwards;
 }
 
-.read-page p:nth-child(2) { animation-delay: 0.2s; }
-.read-page p:nth-child(3) { animation-delay: 0.4s; }
-.read-page p:nth-child(4) { animation-delay: 0.6s; }
-.read-page p:nth-child(5) { animation-delay: 0.8s; }
+.read-page p:nth-child(2){animation-delay:0.2s;}
+.read-page p:nth-child(3){animation-delay:0.4s;}
+.read-page p:nth-child(4){animation-delay:0.6s;}
+.read-page p:nth-child(5){animation-delay:0.8s;}
 
 .back {
     display: inline-block;
@@ -101,23 +97,6 @@ a {
     font-size: 18px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textFade {
-    to {
-        opacity: 1;
-    }
-}
 /* Author Photo */
 .author-photo {
     position: fixed;
@@ -134,7 +113,7 @@ a {
     box-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
-/* Dark / Light Mode Button */
+/* Theme Button */
 #themeToggle {
     position: fixed;
     top: 20px;
@@ -145,7 +124,6 @@ a {
     padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
     z-index: 1000;
 }
 
@@ -157,7 +135,7 @@ a {
 
 .light-mode .book-card,
 .light-mode .read-page {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.85);
     color: #2c1b10;
 }
 
@@ -203,4 +181,13 @@ a {
     top: 10px;
     right: 15px;
     cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes textFade {
+    to {opacity:1;}
 }
