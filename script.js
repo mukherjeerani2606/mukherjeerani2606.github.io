@@ -184,7 +184,7 @@ if(langBtn){
     isEnglish = !isEnglish;
     langBtn.textContent = isEnglish ? "BN" : "EN";
 
-    // Replace text in all elements including <pre> (poems)
+    // Replace text in all elements
     document.querySelectorAll("h1,h2,p,pre,a").forEach(el=>{
       translations.forEach(tr=>{
         if(isEnglish){
