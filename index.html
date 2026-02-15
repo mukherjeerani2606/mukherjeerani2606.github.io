@@ -2,101 +2,31 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আমার সাহিত্য ভুবন</title>
+<title>স্বার্থ</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Top Bar -->
 <div class="top-bar">
+    <img src="author.jpg" class="avatar">
     <button id="themeToggle">🌙</button>
 </div>
 
-<!-- Hero Section -->
-<section class="hero">
-    <img src="author.jpg" class="hero-avatar" alt="Author Image">
-    <h1>রানি মুখার্জি</h1>
-    <p>শব্দে বোনা অনুভূতির ঘর</p>
-</section>
+<div class="container read">
 
-<div class="container">
+<h1>স্বার্থ</h1>
 
-<a href="poem1.html" class="card page-link">
-    <h2>❝ নববর্ষ ❞</h2>
-    <p>ভালোবাসা, অপেক্ষা আর নীরব স্বপ্নের গল্প...</p>
-</a>
+<p>দুনিয়াটা স্বার্থে ভরা...</p>
+<p>নিজের স্বার্থ ফুরালে বুঝি...</p>
+<p>এ জগতের কেউ কারো নয়...</p>
 
-<a href="poem2.html" class="card page-link">
-    <h2>❝ স্বার্থ ❞</h2>
-    <p>মানুষের স্বার্থপরতার নগ্ন বাস্তবতা...</p>
-</a>
+<a href="index.html">← ফিরে যাও</a>
 
-</div>
-
-<!-- About Author -->
-<div id="aboutBtn">About Author</div>
-
-<div id="aboutPopup">
-  <div class="popup-box">
-    <span id="closeAbout">✖</span>
-    <h3>About the Author</h3>
-    <p>
-    রানি মুখার্জি একজন অনুভূতিপ্রবণ লেখক।  
-    সমাজ, অনুভূতি ও মানুষের অন্তর্দ্বন্দ্ব নিয়ে লেখালেখি করেন।  
-    লেখাই তাঁর আত্মার ভাষা।
-    </p>
-  </div>
 </div>
 
 <script>
-
-/* Page Fade In */
-window.addEventListener("load", () => {
-  document.body.classList.add("fade-in");
-});
-
-/* Page Fade Out */
-document.querySelectorAll(".page-link").forEach(link => {
-  link.addEventListener("click", function(e){
-    e.preventDefault();
-    const url = this.href;
-    document.body.classList.remove("fade-in");
-    setTimeout(() => {
-      window.location.href = url;
-    }, 300);
-  });
-});
-
-/* Theme Toggle */
-const t = document.getElementById("themeToggle");
-
-if(localStorage.getItem("theme") === "light"){
-  document.body.classList.add("light");
-  t.innerHTML = "☀️";
-}
-
-t.onclick = () => {
- document.body.classList.toggle("light");
- const isLight = document.body.classList.contains("light");
- t.innerHTML = isLight ? "☀️" : "🌙";
- localStorage.setItem("theme", isLight ? "light" : "dark");
-};
-
-/* About Popup */
-const aboutBtn = document.getElementById("aboutBtn");
-const popup = document.getElementById("aboutPopup");
-const close = document.getElementById("closeAbout");
-
-aboutBtn.onclick = ()=> popup.style.display="flex";
-close.onclick = ()=> popup.style.display="none";
-
-window.onclick = function(e){
-  if(e.target === popup){
-    popup.style.display="none";
-  }
-};
-
+const t=document.getElementById("themeToggle");
+t.onclick=()=>{document.body.classList.toggle("light");};
 </script>
 
 </body>
