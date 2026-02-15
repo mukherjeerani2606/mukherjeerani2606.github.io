@@ -58,17 +58,24 @@ z-index: 999;
     </div>
 
     <!-- About Author Button only on home page -->
-    <div id="aboutBtn" style="
-    position: fixed;
-    bottom: 140px;
-    right: 20px;
-    padding: 12px 20px;
-    background: black; color: #ffdfaa;
-    border: 1px solid #ffdfaa;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 999;
-    ">About Author</div>
+    <!-- Home page only -->
+<!-- Music button already আছে -->
+<button id="musicToggle" style="..."></button>
+
+<!-- About Author button -->
+<div id="aboutBtn" style="
+  position: fixed;
+  bottom: 20px;      /* music button থেকে নিচে adjust করতে হবে */
+  right: 20px;
+  padding: 12px 20px;
+  background: black;
+  color: #ffdfaa;
+  border: 1px solid #ffdfaa;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999;
+">About Author</div>
+
 
     <!-- About Author Popup -->
     <div id="aboutPopup" style="display:none;">
