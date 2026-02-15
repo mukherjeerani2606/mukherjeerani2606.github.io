@@ -313,35 +313,52 @@ aboutBtn.onclick=()=>popup.style.display="flex";
 window.onclick=e=>{ if(e.target===popup) popup.style.display="none"; };
 
 /* ================= LANGUAGE SYSTEM (PRO) ================= */
-const i18n={
- bn:{
-  name:"রাণী মুখার্জী",
-  tagline:"শব্দে বোনা অনুভূতির ঘর",
-  poem1_title:"নববর্ষ | কবিতা",
-  poem1_desc:"অপ্রিয় সত্য কথা ...",
-  poem2_title:"স্বার্থ | কবিতা",
-  poem2_desc:"মানুষের স্বার্থপরতার বাস্তবতা...",
-  p1_name:"নববর্ষ",
-  p1_text:`বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে...`,
-  p2_name:"স্বার্থ",
-  p2_text:`দুনিয়াটা স্বার্থে ভরা ...`,
-  back:"← ফিরে যাও",
-  about:`আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী...`
- },
- en:{
-  name:"Rani Mukherjee",
-  tagline:"A world woven with words and emotions",
-  poem1_title:"New Year | Poem",
-  poem1_desc:"The bitter truth ...",
-  poem2_title:"Selfishness | Poem",
-  poem2_desc:"The reality of human selfishness...",
-  p1_name:"New Year",
-  p1_text:`On the first day of the year...`,
-  p2_name:"Selfishness",
-  p2_text:`The world is full of selfishness...`,
-  back:"← Go Back",
-  about:`I am Rani Mukherjee, an engineering student...`
- }
+const i18n = {
+  bn: {
+    name: "রাণী মুখার্জী",
+    tagline: "শব্দে বোনা অনুভূতির ঘর",
+    back: "← ফিরে যাও",
+
+    poems: {
+      poem1: {
+        title: "নববর্ষ | কবিতা",
+        desc: "অপ্রিয় সত্য কথা ...",
+        name: "নববর্ষ",
+        text: `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে...`
+      },
+      poem2: {
+        title: "স্বার্থ | কবিতা",
+        desc: "মানুষের স্বার্থপরতার বাস্তবতা...",
+        name: "স্বার্থ",
+        text: `দুনিয়াটা স্বার্থে ভরা ...`
+      }
+    },
+
+    about: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী...`
+  },
+
+  en: {
+    name: "Rani Mukherjee",
+    tagline: "A world woven with words and emotions",
+    back: "← Go Back",
+
+    poems: {
+      poem1: {
+        title: "New Year | Poem",
+        desc: "The bitter truth ...",
+        name: "New Year",
+        text: `On the first day of the year...`
+      },
+      poem2: {
+        title: "Selfishness | Poem",
+        desc: "The reality of human selfishness...",
+        name: "Selfishness",
+        text: `The world is full of selfishness...`
+      }
+    },
+
+    about: `I am Rani Mukherjee, an engineering student...`
+  }
 };
 
 let lang="bn";
