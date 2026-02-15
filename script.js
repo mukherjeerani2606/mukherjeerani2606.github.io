@@ -54,3 +54,29 @@ document.querySelectorAll('a').forEach(link => {
     }, 500); // duration match CSS transition
   });
 });
+// For any container you want to animate
+window.addEventListener('DOMContentLoaded', () => {
+  // Choose the elements to animate (e.g., all paragraphs or poem lines)
+  const lines = document.querySelectorAll('.poem, .card h2, .hero h1, .hero p');
+
+  lines.forEach(line => {
+    const words = line.textContent.split(' ');
+    line.textContent = ''; // empty original line
+
+    // wrap each word in span.stagger
+    words.forEach(word => {
+      const span = document.createElement('span');
+      span.textContent = word + ' ';
+      span.classList.add('stagger');
+      line.appendChild(span);
+    });
+
+    // add visible class with staggered delay
+    const spans = line.querySelectorAll('span.stagger');
+    spans.forEach((span, idx) => {
+      setTimeout(() => {
+        span.classList.add('visible');
+      }, idx * 150); // 150ms delay per word
+    });
+  });
+});
