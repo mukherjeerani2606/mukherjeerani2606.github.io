@@ -91,32 +91,38 @@ body{
 .card{
  display:block;
  background:rgba(70,45,25,.85);
- padding:25px;
+ padding:25px 25px 25px 35px; /* left একটু বেশি */
  margin:20px 0;
  border-radius:12px;
  text-decoration:none;
  color:#f5e6c8;
  transition:.3s;
+ position:relative;  /* important */
+ overflow:hidden;
 }
 
-.card:hover{
- transform:scale(1.02);
- background:rgba(90,55,30,.95);
+/* Left Accent Bar */
+.card::before{
+ content:"";
+ position:absolute;
+ left:0;
+ top:0;
+ height:100%;
+ width:6px;
+ background:#ffdfaa; /* চাইলে কালার বদলাতে পারো */
 }
+
 
 /* Reading page */
 /* Reading page */
 .read{
- display:block;
- background:rgba(70,45,25,.85);
- padding:25px;
- margin:140px auto 40px auto;
+ background:rgba(60,35,20,.9);
  border-radius:12px;
- max-width:850px;
+ padding:30px;
+ margin:140px auto 40px auto;
+ max-width:700px;
  width:90%;
- color:#f5e6c8;
 }
-
 .container.read h1{
  text-align:center;
 }
