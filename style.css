@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+}
 
 body{
  font-family:'Noto Serif Bengali',serif;
  background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
  url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
  background-size:cover;
- background-attachment:fixed;
+ background-attachment:scroll;
  color:#f5e6c8;
+ line-height:1.7;
 }
 
 /* Top bar */
@@ -33,6 +38,7 @@ body{
  box-shadow:0 0 15px rgba(255,200,100,.6);
  background:white;
 }
+
 .hero-avatar{
  width:120px;
  height:120px;
@@ -57,7 +63,7 @@ body{
 /* Hero section */
 .hero{
  text-align:center;
- padding-top:140px;
+ padding-top:160px;
 }
 
 .hero h1{
@@ -100,6 +106,12 @@ body{
  background:rgba(60,35,20,.9);
  border-radius:12px;
  padding:30px;
+ margin-top:140px;
+}
+
+.read p{
+ margin-bottom:18px;
+ font-size:18px;
 }
 
 /* About button */
@@ -157,4 +169,26 @@ body{
 .light #aboutBtn{
  background:white;
  color:black;
+}
+
+/* Mobile Optimization */
+@media(max-width:600px){
+
+.hero h1{
+ font-size:28px;
+}
+
+.hero-avatar{
+ width:90px;
+ height:90px;
+}
+
+.container{
+ padding:30px 15px;
+}
+
+.read{
+ padding:20px;
+}
+
 }
