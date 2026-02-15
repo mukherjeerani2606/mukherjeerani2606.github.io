@@ -33,6 +33,17 @@ if (aboutBtn && popup && closeBtn) {
 }
 
 // Smooth page transition
+/* Page transition: top-to-bottom fade effect */
+body {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+  transform: translateY(50px); /* page slide down while fading */
+}
 document.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
