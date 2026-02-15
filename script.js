@@ -31,6 +31,7 @@ if (aboutBtn && popup && closeBtn) {
     if (e.target === popup) popup.style.display = "none";
   });
 }
+
 // ====================
 // Music persistence
 // ====================
@@ -61,6 +62,3 @@ if (music && musicBtn) {
     }
   });
 }
-
-
-
