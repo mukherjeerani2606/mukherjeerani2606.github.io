@@ -1,277 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
 
-*{
- box-sizing:border-box;
- margin:0;
- padding:0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
- font-family:'Noto Serif Bengali',serif;
- background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
- url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
- background-size:cover;
- background-position:center;
- background-repeat:no-repeat;
- background-attachment:fixed;   /* changed */
- color:#f5e6c8;
- line-height:1.7;
+body {
+ font-family: 'Noto Serif Bengali', serif;
+ background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ color: #f5e6c8;
+ line-height: 1.7;
 }
-
 
 /* Top bar */
-.top-bar{
- position:fixed;
- top:15px;
- left:15px;
- right:15px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- z-index:999;
+.top-bar {
+ position: fixed;
+ top: 15px; left: 15px; right: 15px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ z-index: 999;
 }
 
-/* Avatar */
-.avatar{
- width:70px;
- height:70px;
- border-radius:50%;
- object-fit:cover;
- border:2px solid #ffdfaa;
- box-shadow:0 0 15px rgba(255,200,100,.6);
- background:white;
+/* Avatar / Hero */
+.avatar, .hero-avatar {
+ border-radius: 50%;
+ object-fit: cover;
+ border: 2px solid #ffdfaa;
+ box-shadow: 0 0 15px rgba(255,200,100,.6);
+ background: white;
 }
-
-.hero-avatar{
- width:120px;
- height:120px;
- border-radius:50%;
- object-fit:cover;
- border:3px solid #ffdfaa;
- box-shadow:0 0 25px rgba(255,200,100,.7);
- margin-bottom:20px;
+.hero-avatar {
+ width: 120px; height: 120px; margin-bottom: 20px;
+ border-width: 3px;
+ box-shadow: 0 0 25px rgba(255,200,100,.7);
 }
+.avatar { width: 70px; height: 70px; }
 
 /* Theme button */
-#themeToggle{
- padding:10px 14px;
- border-radius:50%;
- border:none;
- cursor:pointer;
- background:black;
- color:#ffdfaa;
- font-size:18px;
+#themeToggle {
+ padding: 10px 14px;
+ border-radius: 50%;
+ border: none;
+ cursor: pointer;
+ background: black;
+ color: #ffdfaa;
+ font-size: 18px;
 }
 
-/* Hero section */
-.hero{
- text-align:center;
- padding-top:50px;   /* was 160px */
-}
+/* Hero Section */
+.hero { text-align: center; padding-top: 50px; }
+.hero h1 { font-size: 40px; letter-spacing: 2px; }
+.hero p { font-style: italic; color: #e0c097; margin-top: 10px; }
 
-.hero h1{
- font-size:40px;
- letter-spacing:2px;
+/* Container & Cards */
+.container { max-width: 850px; margin: auto; padding: 50px 20px; }
+.card {
+ display: block;
+ background: rgba(70,45,25,.85);
+ padding: 25px 25px 25px 35px;
+ margin: 20px 0;
+ border-radius: 12px;
+ text-decoration: none;
+ color: #f5e6c8;
+ transition: .3s;
+ position: relative;
+ overflow: hidden;
 }
-
-.hero p{
- font-style:italic;
- color:#e0c097;
- margin-top:10px;
-}
-
-/* Container */
-.container{
- max-width:850px;
- margin:auto;
- padding:50px 20px;
-}
-
-/* Cards */
-.card{
- display:block;
- background:rgba(70,45,25,.85);
- padding:25px 25px 25px 35px; /* left একটু বেশি */
- margin:20px 0;
- border-radius:12px;
- text-decoration:none;
- color:#f5e6c8;
- transition:.3s;
- position:relative;  /* important */
- overflow:hidden;
-}
-
-/* Left Accent Bar */
-.card::before{
+.card::before {
  content:"";
- position:absolute;
- left:0;
- top:0;
- height:100%;
- width:6px;
- background:#ffdfaa; /* চাইলে কালার বদলাতে পারো */
+ position: absolute;
+ left:0; top:0;
+ height:100%; width:6px;
+ background:#ffdfaa;
 }
 
 /* Reading page */
-/* Reading page */
-.read{
- background:rgba(60,35,20,.9);
- border-radius:12px;
- padding:30px;
- margin:140px auto 40px auto;
- max-width:700px;
- width:90%;
+.read {
+ background: rgba(60,35,20,.9);
+ border-radius: 12px;
+ padding: 30px;
+ margin: 140px auto 40px auto;
+ max-width: 700px;
+ width: 90%;
 }
-.container.read h1{
- text-align:center;
-}
-
-/* About button */
-#aboutBtn{
- position:fixed;
- bottom:20px;
- right:20px;
- padding:12px 20px;
- background:black;
- color:#ffdfaa;
- border:1px solid #ffdfaa;
- border-radius:20px;
- cursor:pointer;
+.container.read h1 { text-align: center; }
+.poem {
+ font-family: 'Noto Serif Bengali', serif;
+ font-size: 18px;
+ line-height: 1.9;
+ white-space: pre-wrap;
 }
 
-/* Popup */
-#aboutPopup{
- display:none;
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.8);
- justify-content:center;
- align-items:center;
+/* Back button */
+.read a, a[href*="index.html"] {
+ display: inline-block;
+ margin-top: 25px;
+ padding: 10px 25px;
+ background-color: #ffdfaa;
+ color: #3a2415 !important;
+ text-decoration: none;
+ border-radius: 25px;
+ font-weight: bold;
+ border: 1px solid #ffdfaa;
+ transition: 0.3s all ease;
+ cursor: pointer;
+ text-align: center;
+}
+.read a:hover, a[href*="index.html"]:hover {
+ background-color: #f5e6c8;
+ transform: translateY(-2px);
+ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.popup-box{
- background:#3a2415;
- padding:25px;
- border-radius:12px;
- color:#ffdfaa;
- width:350px;
- position:relative;
+/* About popup */
+#aboutBtn {
+ position: fixed; bottom: 20px; right: 20px;
+ padding: 12px 20px;
+ background: black; color: #ffdfaa;
+ border: 1px solid #ffdfaa;
+ border-radius: 20px;
+ cursor: pointer;
 }
-
-#closeAbout{
- position:absolute;
- top:10px;
- right:15px;
- cursor:pointer;
+#aboutPopup {
+ display: none;
+ position: fixed; inset: 0;
+ background: rgba(0,0,0,.8);
+ justify-content: center;
+ align-items: center;
+}
+.popup-box {
+ background: #3a2415;
+ padding: 25px;
+ border-radius: 12px;
+ color: #ffdfaa;
+ width: 90%;
+ max-width: 350px;
+ position: relative;
+}
+#closeAbout {
+ position: absolute;
+ top: 10px; right: 15px;
+ cursor: pointer;
 }
 
 /* Light Mode */
-.light{
- background:#f4efe6;
- color:#2c1b10;
+.light {
+ background: #f4efe6;
+ color: #2c1b10;
 }
-
-.light .card,
-.light .read{
- background:white;
- color:#2c1b10;
+.light .card, .light .read {
+ background: white;
+ color: #2c1b10;
 }
-
-.light #themeToggle,
-.light #aboutBtn{
- background:white;
- color:black;
+.light #themeToggle, .light #aboutBtn {
+ background: white;
+ color: black;
 }
 
 /* Mobile Optimization */
 @media(max-width:600px){
-
-.hero h1{
- font-size:28px;
-}
-
-.hero-avatar{
- width:90px;
- height:90px;
-}
-
-.container{
- padding:30px 15px;
-}
-
-.read{
- padding:20px;
-}
-.poem{
- font-family:'Noto Serif Bengali',serif;
- font-size:18px;
- line-height:1.9;
- white-space:pre-wrap;
-}
- /* "ফিরে যাও" লিঙ্কটিকে বাটনে রূপান্তর */
-.read a, a[href*="index.html"] {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #ffdfaa; /* বাটনের ব্যাকগ্রাউন্ড রঙ */
-    color: #3a2415 !important; /* লেখার রঙ গাঢ় ব্রাউন */
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* মাউস নিলে বাটনের পরিবর্তন */
-.read a:hover, a[href*="index.html"]:hover {
-    background-color: #f5e6c8;
-    transform: translateY(-2px); /* সামান্য উপরে উঠবে */
-    box-shadow: 0 6px 15px rgba(255,223,170,0.4);
-}
- /* ল্যাপটপ ও মোবাইলে "ফিরে যাও" বাটন ফিক্স */
-a[href="index.html"], 
-.read a {
-    display: inline-block !important;
-    background-color: #ffdfaa !important; /* সেই পিচ রঙ */
-    color: #3a2415 !important; /* লেখার রঙ গাঢ় ব্রাউন */
-    padding: 10px 25px !important;
-    margin-top: 25px !important;
-    border-radius: 25px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    border: 1px solid #ffdfaa !important;
-    transition: 0.3s all ease;
-    cursor: pointer !important;
-}
-
-/* মাউস নিলে কালার বদলানো */
-a[href="index.html"]:hover, 
-.read a:hover {
-    background-color: #f5e6c8 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
- .read a, a[href*="index.html"] {
-    display: inline-block; /* ensure visible on all screens */
-    margin-top: 25px;
-    padding: 10px 25px;
-    background-color: #ffdfaa;
-    color: #3a2415 !important;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 1px solid #ffdfaa;
-    transition: 0.3s all ease;
-    cursor: pointer;
-    text-align: center;
-}
-
-/* hover effect */
-.read a:hover, a[href*="index.html"]:hover {
-    background-color: #f5e6c8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
+ .hero h1 { font-size: 28px; }
+ .hero-avatar { width: 90px; height: 90px; }
+ .container { padding: 30px 15px; }
+ .read { padding: 20px; }
 }
