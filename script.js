@@ -8,6 +8,16 @@ if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light");
   if (themeBtn) themeBtn.textContent = "☀️";
 }
+// Slide down + fade effect on page load for content
+window.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.container, .read, .hero h1, .hero p, .card');
+  fadeElements.forEach((el, index) => {
+    el.classList.add('fade-slide');
+    setTimeout(() => {
+      el.classList.add('visible');
+    }, 100 + index * 100); // staggered effect
+  });
+});
 
 // Theme toggle
 if (themeBtn) {
