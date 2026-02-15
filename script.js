@@ -130,14 +130,11 @@ Did you tell anyone at home your greetings??
 Did you pay your respects??`
   },
 
-  // Poem 2
- // Poem 2
-{ 
-  bn: "স্বার্থ", 
-  en: "Selfishness" 
-},
-{ 
-  bn: `দুনিয়াটা স্বার্থে ভরা 
+
+
+    // Poem 2
+  { bn: "স্বার্থ", en: "Selfishness" },
+  { bn: `দুনিয়াটা স্বার্থে ভরা 
 স্বার্থ ছাড়া সবই মরা !
 বন্ধু হোক সে যতই আপন 
 ভালোবাসাতে সবাই কূপন
@@ -157,7 +154,7 @@ Did you pay your respects??`
 থাকবো আমি আপন মনে 
 দুনিয়াটা স্বার্থে ভরা 
 স্বার্থ ছাড়া সবই মরা !`, 
-  en: `The world is full of selfishness, 
+    en: `The world is full of selfishness, 
 without selfishness, everything dies!
 No matter how close a friend is, 
 even love can be deceptive.
@@ -177,9 +174,9 @@ Do not speak much with me;
 I will stay with my own thoughts. 
 The world is full of selfishness, 
 without selfishness, everything dies!`
-}
+  },
 
-
+  
   // Back button
   { bn: "← ফিরে যাও", en: "← Go Back" }
 ];
