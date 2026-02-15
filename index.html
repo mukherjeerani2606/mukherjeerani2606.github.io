@@ -19,6 +19,7 @@
   <source src="instrumental.mp4" type="audio/mp4">
 </audio>
 
+<!-- Music Toggle Button -->
 <button id="musicToggle" style="
 position: fixed;
 bottom: 80px;
@@ -33,23 +34,6 @@ z-index: 999;
 ">
 🎵
 </button>
-<!-- About Author Button -->
-<div id="aboutBtn">About Author</div>
-
-<!-- About Author Popup -->
-<div id="aboutPopup">
-  <div class="popup-box">
-    <span id="closeAbout">✖</span>
-    <h3>About the Author</h3>
-    <p>
-আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
-আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
-আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
-সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
-আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।
-    </p>
-  </div>
-</div>
 
 <!-- Pages Container -->
 <div id="pageContainer">
@@ -73,6 +57,25 @@ z-index: 999;
         <p>মানুষের স্বার্থপরতার বাস্তবতা...</p>
       </a>
     </div>
+
+    <!-- About Author Button (only on home page) -->
+    <div id="aboutBtn">About Author</div>
+
+    <!-- About Author Popup -->
+    <div id="aboutPopup">
+      <div class="popup-box">
+        <span id="closeAbout">✖</span>
+        <h3>About the Author</h3>
+        <p>
+আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
+আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
+আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
+সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
+আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <!-- Poem 1 -->
@@ -166,6 +169,21 @@ if(music && musicBtn){
 }
 
 // =====================
+// About popup (only home page)
+// =====================
+const aboutBtn = document.getElementById("aboutBtn");
+const popup = document.getElementById("aboutPopup");
+const closeBtn = document.getElementById("closeAbout");
+
+if (aboutBtn && popup && closeBtn) {
+  aboutBtn.addEventListener("click", () => popup.style.display = "flex");
+  closeBtn.addEventListener("click", () => popup.style.display = "none");
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+}
+
+// =====================
 // Page Navigation without reload
 // =====================
 document.querySelectorAll(".navBtn").forEach(btn=>{
@@ -178,24 +196,18 @@ document.querySelectorAll(".navBtn").forEach(btn=>{
 });
 
 // =====================
-// Language Toggle
+// Language Toggle (full site)
 // =====================
 const langBtn = document.getElementById("langToggle");
 let isEnglish = false;
 
-// Full translations array
 const translations = [
-  // Hero Section
   { bn: "রাণী মুখার্জী", en: "Rani Mukherjee" },
   { bn: "শব্দে বোনা অনুভূতির ঘর", en: "A world woven with words and emotions" },
-  
-  // Cards / Home Page
   { bn: "নববর্ষ | কবিতা", en: "New Year | Poem" },
   { bn: "অপ্রিয় সত্য কথা ...", en: "The bitter truth ..." },
   { bn: "স্বার্থ | কবিতা", en: "Selfishness | Poem" },
   { bn: "মানুষের স্বার্থপরতার বাস্তবতা...", en: "The reality of human selfishness..." },
-
-  // Poem 1
   { bn: "নববর্ষ", en: "New Year" },
   { bn: `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে 
     বলে প্রনাম নিও, ও বলে আশীষ দিও!
@@ -232,8 +244,6 @@ Then ask yourself!
 Did you tell anyone at home your greetings??
 Did you pay your respects??`
   },
-
-  // Poem 2
   { bn: "স্বার্থ", en: "Selfishness" },
   { bn: `দুনিয়াটা স্বার্থে ভরা 
 স্বার্থ ছাড়া সবই মরা !
@@ -276,16 +286,15 @@ I will remain with my own mind
 The world is full of selfishness
 Without selfishness, everything dies!`
   },
-
-  // Back button
-  { bn: "← ফিরে যাও", en: "← Go Back" }
+  { bn: "← ফিরে যাও", en: "← Go Back" },
+  { bn: "About Author", en: "About Author" }
 ];
 
 if(langBtn){
   langBtn.addEventListener("click", ()=>{
     isEnglish = !isEnglish;
     langBtn.textContent = isEnglish ? "BN" : "EN";
-    document.querySelectorAll("h1,h2,p,pre,a").forEach(el=>{
+    document.querySelectorAll("h1,h2,p,pre,a,div").forEach(el=>{
       translations.forEach(tr=>{
         if(isEnglish){
           if(el.textContent.includes(tr.bn)) el.textContent = el.textContent.replace(tr.bn,tr.en);
