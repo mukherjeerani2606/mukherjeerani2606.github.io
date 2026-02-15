@@ -131,8 +131,13 @@ Did you pay your respects??`
   },
 
   // Poem 2
-  { bn: "স্বার্থ", en: "Selfishness" },
-  { bn: `দুনিয়াটা স্বার্থে ভরা 
+ // Poem 2
+{ 
+  bn: "স্বার্থ", 
+  en: "Selfishness" 
+},
+{ 
+  bn: `দুনিয়াটা স্বার্থে ভরা 
 স্বার্থ ছাড়া সবই মরা !
 বন্ধু হোক সে যতই আপন 
 ভালোবাসাতে সবাই কূপন
@@ -151,28 +156,29 @@ Did you pay your respects??`
 কও না কথা কথা আমার সনে 
 থাকবো আমি আপন মনে 
 দুনিয়াটা স্বার্থে ভরা 
-স্বার্থ ছাড়া সবই মরা !`,
-en: `The world is full of selfishness
-Without selfishness, everything dies!
-No matter how close a friend is
-Everyone cheats even in love.
+স্বার্থ ছাড়া সবই মরা !`, 
+  en: `The world is full of selfishness, 
+without selfishness, everything dies!
+No matter how close a friend is, 
+even love can be deceptive.
 
-When one's own interest ends
-No one really knows anyone
-The more I think everyone is close
-The more everyone deceives.
+When one's own interest runs out, 
+people fail to truly know each other. 
+The more I consider everyone as close, 
+the more they disappoint me.
 
-If I smile, he/she stays
-If I cry, who cares??
-No one belongs to anyone in this world
-They remember only when time is scarce.
+If I smile, someone stays, 
+if I cry, who will notice? 
+No one really belongs to anyone in this world; 
+they only remember when time is short.
 
-So I say...
-Do not speak much with me
-I will remain with my own mind
-The world is full of selfishness
-Without selfishness, everything dies!`
-  },
+So I say... 
+Do not speak much with me; 
+I will stay with my own thoughts. 
+The world is full of selfishness, 
+without selfishness, everything dies!`
+}
+
 
   // Back button
   { bn: "← ফিরে যাও", en: "← Go Back" }
