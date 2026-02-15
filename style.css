@@ -190,16 +190,15 @@ body.fade-out {
   transform: translateY(0);
 }
 
-/* Initial state: up and transparent */
-.stagger {
+/* Initial state: above and invisible */
+.text-animate {
   opacity: 0;
   transform: translateY(-20px);
-  display: inline-block; /* necessary for span based text */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 /* When visible */
-.stagger.visible {
+.text-animate.visible {
   opacity: 1;
   transform: translateY(0);
 }
