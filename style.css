@@ -184,11 +184,11 @@ body {
 }
 
 .read .poem {
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
 .read a {
-  animation-delay: 0.11s;
+  animation-delay: 0.10s;
 }
 
 @keyframes textSlideUp {
