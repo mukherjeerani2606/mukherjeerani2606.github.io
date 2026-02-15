@@ -52,11 +52,11 @@ body {
 /* Hero Section */
 .hero { text-align: center; padding-top: 50px; }
 .hero h1 { 
-  font-size: 40px; 
+  font-size: 50px; 
   letter-spacing: 2px; 
   color: #e0e0e0; /* এখানে আগে গোল্ডেন ছিল, এখন সাদা হবে */
 }
-.hero p { font-style: italic; color: #e0c097; margin-top: 10px; }
+.hero p { font-style: italic; color: #e0c097; margin-top: 15px; }
 
 /* Container & Cards */
 .container { max-width: 850px; margin: auto; padding: 50px 20px; }
