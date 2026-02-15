@@ -62,6 +62,22 @@ body{
  color:#ffdfaa;
  font-size:18px;
 }
+#langToggle{
+ padding:10px 14px;
+ border-radius:20px;
+ border:none;
+ cursor:pointer;
+ background:black;
+ color:#ffdfaa;
+ font-size:14px;
+ margin-right:10px;
+}
+
+.light #langToggle{
+ background:white;
+ color:black;
+}
+
 
 /* Hero section */
 .hero{
