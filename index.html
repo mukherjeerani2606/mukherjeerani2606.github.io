@@ -2,6 +2,7 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>আমার সাহিত্য ভুবন</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -9,12 +10,12 @@
 
 <!-- Top Bar -->
 <div class="top-bar">
-    <img src="author.jpg" class="avatar">
     <button id="themeToggle">🌙</button>
 </div>
 
 <!-- Hero Section -->
 <section class="hero">
+    <img src="author.jpg" class="hero-avatar" alt="Author Image">
     <h1>রানি মুখার্জি</h1>
     <p>শব্দে বোনা অনুভূতির ঘর</p>
 </section>
@@ -51,6 +52,7 @@
 <script>
 /* Theme */
 const t = document.getElementById("themeToggle");
+
 t.onclick = () => {
  document.body.classList.toggle("light");
  t.innerHTML = document.body.classList.contains("light") ? "☀️" : "🌙";
@@ -63,9 +65,13 @@ const close = document.getElementById("closeAbout");
 
 aboutBtn.onclick = ()=> popup.style.display="flex";
 close.onclick = ()=> popup.style.display="none";
+
+window.onclick = function(e){
+  if(e.target === popup){
+    popup.style.display="none";
+  }
+};
 </script>
 
 </body>
 </html>
-
-age sob code gulo dakho
