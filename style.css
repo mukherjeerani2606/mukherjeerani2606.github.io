@@ -208,4 +208,25 @@ body{
  line-height:1.9;
  white-space:pre-wrap;
 }
+ /* "ফিরে যাও" লিঙ্কটিকে বাটনে রূপান্তর */
+.read a, a[href*="index.html"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #ffdfaa; /* বাটনের ব্যাকগ্রাউন্ড রঙ */
+    color: #3a2415 !important; /* লেখার রঙ গাঢ় ব্রাউন */
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* মাউস নিলে বাটনের পরিবর্তন */
+.read a:hover, a[href*="index.html"]:hover {
+    background-color: #f5e6c8;
+    transform: translateY(-2px); /* সামান্য উপরে উঠবে */
+    box-shadow: 0 6px 15px rgba(255,223,170,0.4);
+}
+
 }
