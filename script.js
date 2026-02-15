@@ -32,29 +32,12 @@ if (aboutBtn && popup && closeBtn) {
   });
 }
 
-// About popup
-const aboutBtn = document.getElementById("aboutBtn");
-const popup = document.getElementById("aboutPopup");
-const closeBtn = document.getElementById("closeAbout");
-
-if (aboutBtn && popup && closeBtn) {
-  aboutBtn.addEventListener("click", () => popup.style.display = "flex");
-  closeBtn.addEventListener("click", () => popup.style.display = "none");
-  window.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
-  });
-}
-
-
-
-
 // ====================
 // Music persistence
 // ====================
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-// Check localStorage if music was playing
 if (music && musicBtn) {
   if (localStorage.getItem("musicPlaying") === "true") {
     music.play();
@@ -79,6 +62,21 @@ if (music && musicBtn) {
   });
 }
 
+// ====================
+// Page Navigation without reload
+// ====================
+document.querySelectorAll(".navBtn").forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault();
+    const target = btn.dataset.target;
+    document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+    document.getElementById(target).style.display="block";
+  });
+});
+
+// ====================
+// Language Toggle (full page, including poems)
+// ====================
 const langBtn = document.getElementById("langToggle");
 let isEnglish = false;
 
@@ -186,7 +184,7 @@ if(langBtn){
     isEnglish = !isEnglish;
     langBtn.textContent = isEnglish ? "BN" : "EN";
 
-    // Replace text in all elements
+    // Replace text in all elements including <pre> (poems)
     document.querySelectorAll("h1,h2,p,pre,a").forEach(el=>{
       translations.forEach(tr=>{
         if(isEnglish){
@@ -198,4 +196,3 @@ if(langBtn){
     });
   });
 }
-
