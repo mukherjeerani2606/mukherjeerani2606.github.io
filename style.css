@@ -174,3 +174,31 @@ body {
   transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
   box-shadow: 0 15px 25px rgba(255,223,170,0.5);
 }
+/* Text Shift Animation */
+.read h1,
+.read .poem,
+.read a {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: textSlideUp 0.8s ease forwards;
+}
+
+.read .poem {
+  animation-delay: 0.3s;
+}
+
+.read a {
+  animation-delay: 0.6s;
+}
+
+@keyframes textSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
