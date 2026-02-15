@@ -5,455 +5,188 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>রাণীর সাহিত্য ভুবন</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-/* BODY */
-body {
- font-family: 'Noto Serif Bengali', serif;
- background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+ font-family:'Noto Serif Bengali',serif;
+ background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
  url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- background-attachment: fixed;
- color: #f5e6c8;
- line-height: 1.7;
- transition: background .3s, color .3s;
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ background-attachment:fixed;
+ color:#f5e6c8;
+ line-height:1.7;
+ transition:.3s;
+}
+.top-bar{
+ position:fixed;top:15px;left:15px;right:15px;
+ display:flex;justify-content:space-between;z-index:999;
+}
+.hero{text-align:center;padding-top:60px;}
+.hero-avatar{
+ width:120px;height:120px;border-radius:50%;
+ object-fit:cover;border:3px solid #ffdfaa;
+ box-shadow:0 0 25px rgba(255,200,100,.7);
+}
+.hero h1{font-size:50px;letter-spacing:2px;color:#e0e0e0;}
+.hero p{color:#e0c097;margin-top:15px;font-style:italic;}
+
+.container{max-width:850px;margin:auto;padding:50px 20px;}
+
+.card{
+ display:block;background:rgba(70,45,25,.85);
+ padding:25px 25px 25px 35px;margin:20px 0;
+ border-radius:12px;text-decoration:none;color:white;
+ position:relative;overflow:hidden;
+ transition:.4s;
+}
+.card::before{
+ content:"";position:absolute;left:0;top:0;height:100%;width:6px;background:#ffdfaa;
+}
+.card:hover{
+ transform:translateY(-8px) rotateX(2deg) rotateY(2deg);
+ box-shadow:0 15px 25px rgba(255,223,170,.5);
 }
 
-/* TOP BAR */
-.top-bar {
- position: fixed;
- top: 15px; left: 15px; right: 15px;
- display: flex;
- justify-content: space-between;
- z-index: 999;
+.read{
+ background:rgba(60,35,20,.9);
+ border-radius:12px;padding:30px;
+ margin:140px auto 40px auto;
+ max-width:700px;width:90%;
+}
+.read h1{text-align:center;}
+.poem{font-size:18px;line-height:1.9;white-space:pre-wrap;}
+
+.read a{
+ display:inline-block;margin-top:25px;padding:10px 25px;
+ background:#ffdfaa;color:#3a2415;text-decoration:none;
+ border-radius:25px;font-weight:bold;border:1px solid #ffdfaa;
+ transition:.3s;
+}
+.read a:hover{
+ background:#f5e6c8;transform:translateY(-2px);
+ box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
-/* HERO */
-.hero { text-align: center; padding-top: 60px; }
-.hero-avatar {
- width: 120px; height: 120px;
- border-radius: 50%;
- object-fit: cover;
- border: 3px solid #ffdfaa;
- box-shadow: 0 0 25px rgba(255,200,100,.7);
-}
-.hero h1 { font-size: 50px; letter-spacing: 2px; color: #e0e0e0; }
-.hero p { color: #e0c097; margin-top: 15px; font-style: italic; }
-
-/* CONTAINER */
-.container { max-width: 850px; margin: auto; padding: 50px 20px; }
-
-/* CARDS */
-.card {
- display: block;
- background: rgba(70,45,25,.85);
- padding: 25px 25px 25px 35px;
- margin: 20px 0;
- border-radius: 12px;
- text-decoration: none;
- color: white;
- position: relative;
- overflow: hidden;
- transition: transform .4s ease, box-shadow .4s ease;
-}
-.card::before {
- content:"";
- position: absolute;
- left:0; top:0;
- height:100%; width:6px;
- background:#ffdfaa;
-}
-.card:hover {
- transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
- box-shadow: 0 15px 25px rgba(255,223,170,.5);
+#themeToggle,#langToggle{
+ padding:10px 14px;border-radius:50%;
+ border:none;cursor:pointer;background:black;color:#ffdfaa;font-size:18px;
 }
 
-/* READING PAGE */
-.read {
- background: rgba(60,35,20,.9);
- border-radius: 12px;
- padding: 30px;
- margin: 140px auto 40px auto;
- max-width: 700px;
- width: 90%;
+#aboutBtn{
+ position:fixed;bottom:20px;right:20px;
+ padding:12px 20px;background:black;color:#ffdfaa;
+ border:1px solid #ffdfaa;border-radius:20px;cursor:pointer;z-index:999;
 }
-.read h1 { text-align: center; }
-.poem { font-size: 18px; line-height: 1.9; white-space: pre-wrap; }
+#aboutPopup{
+ display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
+ justify-content:center;align-items:center;
+}
+.popup-box{
+ background:#3a2415;padding:25px;border-radius:12px;color:#ffdfaa;
+ width:90%;max-width:400px;position:relative;
+}
+#closeAbout{position:absolute;top:10px;right:15px;cursor:pointer;}
 
-/* BACK BUTTON */
-.read a {
- display: inline-block;
- margin-top: 25px;
- padding: 10px 25px;
- background: #ffdfaa;
- color: #3a2415;
- text-decoration: none;
- border-radius: 25px;
- font-weight: bold;
- border: 1px solid #ffdfaa;
- transition: .3s;
-}
-.read a:hover {
- background: #f5e6c8;
- transform: translateY(-2px);
- box-shadow: 0 5px 15px rgba(0,0,0,.3);
+#musicToggle{
+ position:fixed;bottom:80px;right:20px;
+ padding:12px 18px;background:black;color:#ffdfaa;
+ border:1px solid #ffdfaa;border-radius:20px;cursor:pointer;z-index:999;
 }
 
-/* BUTTONS */
-#themeToggle, #langToggle {
- padding: 10px 14px;
- border-radius: 50%;
- border: none;
- cursor: pointer;
- background: black;
- color: #ffdfaa;
- font-size: 18px;
+.light{
+ background:#f4efe6!important;background-image:none!important;color:#2c1b10;
+}
+.light .card,.light .read{background:white;color:#2c1b10;}
+.light #themeToggle,.light #aboutBtn,.light #musicToggle{background:white;color:black;}
+.light .hero h1{color:#2c1b10;}
+
+.text-animate{opacity:0;transform:translateY(-40px);animation:textSlideUp .8s forwards;}
+.poem-delay{animation-delay:.6s;}
+.btn-delay{animation-delay:1s;}
+
+@keyframes textSlideUp{
+ from{opacity:0;transform:translateY(-40px);}
+ to{opacity:1;transform:translateY(0);}
 }
 
-/* ABOUT BUTTON */
-#aboutBtn {
- position: fixed; bottom: 20px; right: 20px;
- padding: 12px 20px;
- background: black;
- color: #ffdfaa;
- border: 1px solid #ffdfaa;
- border-radius: 20px;
- cursor: pointer;
- z-index: 999;
-}
-
-/* ABOUT POPUP */
-#aboutPopup {
- display: none;
- position: fixed; inset: 0;
- background: rgba(0,0,0,.8);
- justify-content: center;
- align-items: center;
-}
-.popup-box {
- background: #3a2415;
- padding: 25px;
- border-radius: 12px;
- color: #ffdfaa;
- width: 90%;
- max-width: 400px;
- position: relative;
-}
-#closeAbout { position: absolute; top: 10px; right: 15px; cursor: pointer; }
-
-/* MUSIC BUTTON */
-#musicToggle {
- position: fixed;
- bottom: 80px;
- right: 20px;
- padding: 12px 18px;
- background: black;
- color: #ffdfaa;
- border: 1px solid #ffdfaa;
- border-radius: 20px;
- cursor: pointer;
- z-index: 999;
-}
-
-/* LIGHT MODE */
-.light {
- background: #f4efe6 !important;
- background-image: none !important;
- color: #2c1b10;
-}
-.light .card, .light .read { background: white; color: #2c1b10; }
-.light #themeToggle, .light #aboutBtn, .light #musicToggle { background: white; color: black; }
-.light .hero h1 { color:#2c1b10; }
-
-/* TEXT ANIMATION */
-.text-animate {
- opacity: 0;
- transform: translateY(-40px);
- animation: textSlideUp .8s ease forwards;
-}
-.poem-delay { animation-delay: .6s; }
-.btn-delay { animation-delay: 1s; }
-
-@keyframes textSlideUp {
- from { opacity: 0; transform: translateY(-40px); }
- to { opacity: 1; transform: translateY(0); }
-}
-
-/* MOBILE */
 @media(max-width:600px){
- .hero h1 { font-size: 28px; }
- .hero-avatar { width: 90px; height: 90px; }
- .container { padding: 30px 15px; }
- .read { padding: 20px; }
+ .hero h1{font-size:28px;}
+ .hero-avatar{width:90px;height:90px;}
+ .container{padding:30px 15px;}
+ .read{padding:20px;}
 }
 </style>
 </head>
+
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">
-  <button id="themeToggle">🌙</button>
-  <button id="langToggle">EN</button>
+ <button id="themeToggle">🌙</button>
+ <button id="langToggle">EN</button>
 </div>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="instrumental.mp4" type="audio/mp4">
+ <source src="instrumental.mp4" type="audio/mp4">
 </audio>
 <button id="musicToggle">🎵</button>
 
-<!-- PAGES -->
 <div id="pageContainer">
 
 <!-- HOME -->
 <div class="page" id="homePage">
-  <section class="hero">
-    <img src="author.jpg" class="hero-avatar">
-    <h1 data-i18n="name">রাণী মুখার্জী</h1>
-    <p data-i18n="tagline">শব্দে বোনা অনুভূতির ঘর</p>
-  </section>
+<section class="hero">
+ <img src="author.jpg" class="hero-avatar">
+ <h1 data-i18n="name">রাণী মুখার্জী</h1>
+ <p data-i18n="tagline">শব্দে বোনা অনুভূতির ঘর</p>
+</section>
 
-  <div class="container">
-    <a href="#" class="card navBtn" data-target="poem1">
-      <h2 data-i18n="poem1_title">নববর্ষ | কবিতা</h2>
-      <p data-i18n="poem1_desc">অপ্রিয় সত্য কথা ...</p>
-    </a>
+<div class="container">
+ <a href="#" class="card navBtn" data-target="poem1">
+  <h2 data-i18n="poems.poem1.title"></h2>
+  <p data-i18n="poems.poem1.desc"></p>
+ </a>
 
-    <a href="#" class="card navBtn" data-target="poem2">
-      <h2 data-i18n="poem2_title">স্বার্থ | কবিতা</h2>
-      <p data-i18n="poem2_desc">মানুষের স্বার্থপরতার বাস্তবতা...</p>
-    </a>
-  </div>
+ <a href="#" class="card navBtn" data-target="poem2">
+  <h2 data-i18n="poems.poem2.title"></h2>
+  <p data-i18n="poems.poem2.desc"></p>
+ </a>
+</div>
 
-  <div id="aboutBtn">About Author</div>
+<div id="aboutBtn">About Author</div>
 
-  <div id="aboutPopup">
-    <div class="popup-box">
-      <span id="closeAbout">✖</span>
-      <h3>About the Author</h3>
-      <p id="aboutText"></p>
-    </div>
-  </div>
+<div id="aboutPopup">
+ <div class="popup-box">
+  <span id="closeAbout">✖</span>
+  <h3>About the Author</h3>
+  <p id="aboutText"></p>
+ </div>
+</div>
 </div>
 
 <!-- POEM 1 -->
 <div class="page" id="poem1" style="display:none;">
-  <div class="container read">
-    <h1 class="text-animate" data-i18n="p1_name">নববর্ষ</h1>
-    <pre class="poem text-animate poem-delay" data-i18n="p1_text"></pre>
-    <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back">← ফিরে যাও</a>
-  </div>
+ <div class="container read">
+  <h1 class="text-animate" data-i18n="poems.poem1.name"></h1>
+  <pre class="poem text-animate poem-delay" data-i18n="poems.poem1.text"></pre>
+  <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back"></a>
+ </div>
 </div>
 
 <!-- POEM 2 -->
 <div class="page" id="poem2" style="display:none;">
-  <div class="container read">
-    <h1 class="text-animate" data-i18n="p2_name">স্বার্থ</h1>
-    <pre class="poem text-animate poem-delay" data-i18n="p2_text"></pre>
-    <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back">← ফিরে যাও</a>
-  </div>
+ <div class="container read">
+  <h1 class="text-animate" data-i18n="poems.poem2.name"></h1>
+  <pre class="poem text-animate poem-delay" data-i18n="poems.poem2.text"></pre>
+  <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back"></a>
+ </div>
 </div>
 
 </div>
 
-<script>
-/* ================= THEME ================= */
-const themeBtn = document.getElementById("themeToggle");
-if(localStorage.getItem("theme")==="light"){ document.body.classList.add("light"); themeBtn.textContent="☀️"; }
-
-themeBtn.onclick=()=>{
- document.body.classList.toggle("light");
- localStorage.setItem("theme", document.body.classList.contains("light")?"light":"dark");
- themeBtn.textContent=document.body.classList.contains("light")?"☀️":"🌙";
-};
-
-/* ================= MUSIC ================= */
-const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicToggle");
-music.volume=0.5;
-if(localStorage.getItem("musicPlaying")==="true"){ music.play(); musicBtn.textContent="🔊"; }
-
-musicBtn.onclick=()=>{
- if(music.paused){ music.play(); musicBtn.textContent="🔊"; localStorage.setItem("musicPlaying","true"); }
- else { music.pause(); musicBtn.textContent="🎵"; localStorage.setItem("musicPlaying","false"); }
-};
-
-/* ================= NAVIGATION + ANIMATION ================= */
-function triggerAnim(page){
- page.querySelectorAll(".text-animate").forEach(el=>{
-   el.classList.remove("text-animate");
-   void el.offsetWidth;
-   el.classList.add("text-animate");
- });
-}
-
-document.querySelectorAll(".navBtn").forEach(btn=>{
- btn.onclick=e=>{
-  e.preventDefault();
-  const target=btn.dataset.target;
-  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-  const page=document.getElementById(target);
-  page.style.display="block";
-  triggerAnim(page);
- };
-});
-
-/* ================= ABOUT POPUP ================= */
-const aboutBtn=document.getElementById("aboutBtn");
-const popup=document.getElementById("aboutPopup");
-document.getElementById("closeAbout").onclick=()=>popup.style.display="none";
-aboutBtn.onclick=()=>popup.style.display="flex";
-window.onclick=e=>{ if(e.target===popup) popup.style.display="none"; };
-
-/* ================= LANGUAGE SYSTEM (PRO) ================= */
-const i18n = {
-  bn: {
-    name: "রাণী মুখার্জী",
-    tagline: "শব্দে বোনা অনুভূতির ঘর",
-    back: "← ফিরে যাও",
-
-    poems: {
-      poem1: {
-        title: "নববর্ষ | কবিতা",
-        desc: "অপ্রিয় সত্য কথা ...",
-        name: "নববর্ষ",
-        text: `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে 
-    বলে প্রনাম নিও, ও বলে আশীষ দিও!
-জেঠু-জেঠি, মামা-মামি, পিসি-পিসে 
-    শুভেচ্ছা জানায় সবাই ফোনের ভেতর দিয়ে।
-
-ঘরে আনা হচ্ছে মাংস মিষ্টি 
-    যাতে পড়ে লোকের দৃষ্টি
-হোয়াটস্অ্যাপ , ভিডিও কল, ফেসবুক 
-    নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
-
-হয়তো তুমি, তাকেও জানিয়েছো ফোনে শুভেচ্ছা 
-    যার পাশে বসে বলতে পারতে কথা !
-যদি তুমিও মেতেছ ফোনের মাধ্যমে 
-    তবে প্রশ্ন করে নিজেকে!
-
-বাড়ির কাউকে কী জানিয়েছো শুভেচ্ছা ?? 
-    করেছ কী প্রনাম ??`
-      },
-      poem2: {
-        title: "স্বার্থ | কবিতা",
-        desc: "মানুষের স্বার্থপরতার বাস্তবতা...",
-        name: "স্বার্থ",
-        text: `দুনিয়াটা স্বার্থে ভরা 
-স্বার্থ ছাড়া সবই মরা !
-বন্ধু হোক সে যতই আপন 
-ভালোবাসাতে সবাই কূপন
-
-নিজের স্বার্থ ফুরালে বুঝি 
-কেউ কাউকে না চিনি 
-যতই ভাবি আাপন সবাই 
-ততই বেশি ঠকায় সবাই
-
-হাসলে আমি থাকবে সে 
-কাঁদলে পরে 'তুমি' কে ??
-এ জগতের কেউ কারো নয় 
-মনে পড়ে তার , যখন পার হয় না সময় 
-
-তাই তো বলি... 
-কও না কথা কথা আমার সনে 
-থাকবো আমি আপন মনে 
-দুনিয়াটা স্বার্থে ভরা 
-স্বার্থ ছাড়া সবই মরা !'
-      }
-    },
-    
-    about: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
-আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
-আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
-সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
-আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।`
-  },
-
-  en: {
-    name: "Rani Mukherjee",
-    tagline: "A world woven with words and emotions",
-    back: "← Go Back",
-
-    poems: {
-      poem1: {
-        title: "New Year | Poem",
-        desc: "The bitter truth ...",
-        name: "New Year",
-        text: `On the first day of the year, greetings come counting one by one
-Say your regards, and give your blessings!
-Uncles and aunts, cousins
-Everyone sends wishes through the phone.
-
-Bringing sweets and meat
-To catch everyone's attention
-WhatsApp, video calls, Facebook
-The internet celebrates greetings grandly.
-
-Perhaps you have also sent greetings via phone
-Sitting beside someone, unable to speak!
-If you also sent them via phone
-Then ask yourself!
-
-Did you tell anyone at home your greetings??
-Did you pay your respects??`
-      },
-      poem2: {
-        title: "Selfishness | Poem",
-        desc: "The reality of human selfishness...",
-        name: "Selfishness",
-        text: `The world is full of selfishness, 
-without selfishness, everything dies!
-No matter how close a friend is, 
-even love can be deceptive.
-
-When one's own interest runs out, 
-people fail to truly know each other. 
-The more I consider everyone as close, 
-the more they disappoint me.
-
-If I smile, someone stays, 
-if I cry, who will notice? 
-No one really belongs to anyone in this world; 
-they only remember when time is short.
-
-So I say... 
-Do not speak much with me; 
-I will stay with my own thoughts. 
-The world is full of selfishness, 
-without selfishness, everything dies!`
-      }
-    },
-
-    about: `I am Rani Mukherjee, an engineering student, but I love writing beyond my profession.  
-To me, the world is a collection of countless small emotions.  
-I believe that what cannot be spoken can be expressed clearly with the stroke of a pen.  
-I love reflecting on society, the complex chemistry of human minds, and unexpressed emotions.  
-If my writing touches some hidden feeling in your heart, my effort is worthwhile.`
-  }
-};
-
-let lang="bn";
-const langBtn=document.getElementById("langToggle");
-function applyLang(){
- document.querySelectorAll("[data-i18n]").forEach(el=>{
-  el.textContent=i18n[lang][el.dataset.i18n];
- });
- document.getElementById("aboutText").textContent=i18n[lang].about;
-}
-langBtn.onclick=()=>{
- lang=lang==="bn"?"en":"bn";
- langBtn.textContent=lang==="bn"?"EN":"BN";
- applyLang();
-};
-applyLang();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
