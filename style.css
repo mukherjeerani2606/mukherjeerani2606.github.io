@@ -179,7 +179,7 @@ body {
 .read .poem,
 .read a {
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(40px);
   animation: textSlideUp 0.8s ease forwards;
 }
 
@@ -194,7 +194,7 @@ body {
 @keyframes textSlideUp {
   from {
     opacity: 0;
-    transform: translateY(-40px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
