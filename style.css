@@ -112,10 +112,6 @@ body{
  background:#ffdfaa; /* চাইলে কালার বদলাতে পারো */
 }
 
-.card:hover::before{
- background:#ffffff;
-}
-
 /* Reading page */
 /* Reading page */
 .read{
