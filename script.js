@@ -1,70 +1,46 @@
+// =====================
+// Theme Toggle
+// =====================
 const themeBtn = document.getElementById("themeToggle");
-const aboutBtn = document.getElementById("aboutBtn");
-const popup = document.getElementById("aboutPopup");
-const closeBtn = document.getElementById("closeAbout");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light");
-  if (themeBtn) themeBtn.textContent = "☀️";
-}
-
-// Theme toggle
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
+if(themeBtn){
+  themeBtn.addEventListener("click", ()=>{
     document.body.classList.toggle("light");
-    if (document.body.classList.contains("light")) {
-      localStorage.setItem("theme", "light");
-      themeBtn.textContent = "☀️";
-    } else {
-      localStorage.setItem("theme", "dark");
-      themeBtn.textContent = "🌙";
-    }
+    themeBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
   });
 }
 
-// About popup
-if (aboutBtn && popup && closeBtn) {
-  aboutBtn.addEventListener("click", () => popup.style.display = "flex");
-  closeBtn.addEventListener("click", () => popup.style.display = "none");
-  window.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
-  });
-}
-
-// ====================
-// Music persistence
-// ====================
+// =====================
+// Music Toggle with persistence
+// =====================
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-if (music && musicBtn) {
-  if (localStorage.getItem("musicPlaying") === "true") {
+if(music && musicBtn){
+  if(localStorage.getItem("musicPlaying")==="true"){
     music.play();
     musicBtn.textContent = "🔊";
   } else {
     music.pause();
     musicBtn.textContent = "🎵";
   }
-
   music.volume = 0.5;
 
-  musicBtn.addEventListener("click", () => {
-    if (music.paused) {
+  musicBtn.addEventListener("click", ()=>{
+    if(music.paused){
       music.play();
       musicBtn.textContent = "🔊";
-      localStorage.setItem("musicPlaying", "true");
+      localStorage.setItem("musicPlaying","true");
     } else {
       music.pause();
       musicBtn.textContent = "🎵";
-      localStorage.setItem("musicPlaying", "false");
+      localStorage.setItem("musicPlaying","false");
     }
   });
 }
 
-// ====================
+// =====================
 // Page Navigation without reload
-// ====================
+// =====================
 document.querySelectorAll(".navBtn").forEach(btn=>{
   btn.addEventListener("click", e=>{
     e.preventDefault();
@@ -74,9 +50,9 @@ document.querySelectorAll(".navBtn").forEach(btn=>{
   });
 });
 
-// ====================
-// Language Toggle (full page, including poems)
-// ====================
+// =====================
+// Language Toggle (full page, including poems & About Author)
+// =====================
 const langBtn = document.getElementById("langToggle");
 let isEnglish = false;
 
@@ -105,12 +81,12 @@ const translations = [
     নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
 
 হয়তো তুমি, তাকেও জানিয়েছো ফোনে শুভেচ্ছা 
-    যার পাশে বসে বলতে পারতে কথা !
+যার পাশে বসে বলতে পারতে কথা !
 যদি তুমিও মেতেছ ফোনের মাধ্যমে 
-    তবে প্রশ্ন করে নিজেকে!
+তবে প্রশ্ন করে নিজেকে!
 
 বাড়ির কাউকে কী জানিয়েছো শুভেচ্ছা ?? 
-    করেছ কী প্রনাম ??`, 
+করেছ কী প্রনাম ??`, 
     en: `On the first day of the year, greetings come counting one by one
 Say your regards, and give your blessings!
 Uncles and aunts, cousins
@@ -178,11 +154,8 @@ Without selfishness, everything dies!`
   { bn: "← ফিরে যাও", en: "← Go Back" }
 ];
 
-// ====================
 // About Author translation
-// ====================
 const aboutPopupText = document.querySelector("#aboutPopup p");
-
 const aboutTranslation = {
   bn: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
 আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
@@ -195,13 +168,6 @@ I believe what cannot be spoken can be expressed through the pen.
 I love reflecting on society, the complex chemistry of human minds, and unexpressed feelings.  
 If my writing touches any hidden feeling in your heart, my effort is truly worthwhile.`
 };
-
-// Update About Author text on language toggle
-if(langBtn && aboutPopupText){
-  langBtn.addEventListener("click", ()=>{
-    aboutPopupText.textContent = isEnglish ? aboutTranslation.en : aboutTranslation.bn;
-  });
-}
 
 // Language toggle function
 if(langBtn){
@@ -219,5 +185,8 @@ if(langBtn){
         }
       });
     });
+
+    // Update About Author popup text
+    if(aboutPopupText) aboutPopupText.textContent = isEnglish ? aboutTranslation.en : aboutTranslation.bn;
   });
 }
