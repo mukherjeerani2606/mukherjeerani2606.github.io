@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
+/* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* BODY */
 body {
  font-family: 'Hind Siliguri', sans-serif;
- background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+ background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), 
+ url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
  background-attachment: fixed;
  color: #f5e6c8;
  line-height: 1.7;
+ transition: background .3s, color .3s;
 }
 
-/* Top bar */
+/* TOP BAR */
 .top-bar {
  position: fixed;
  top: 15px; left: 15px; right: 15px;
@@ -23,7 +27,7 @@ body {
  z-index: 999;
 }
 
-/* Avatar / Hero */
+/* HERO AVATAR */
 .avatar, .hero-avatar {
  border-radius: 50%;
  object-fit: cover;
@@ -32,13 +36,13 @@ body {
  background: white;
 }
 .hero-avatar {
- width: 120px; height: 120px; margin-bottom: 20px;
+ width: 120px; height: 120px;
+ margin-bottom: 20px;
  border-width: 3px;
  box-shadow: 0 0 25px rgba(255,200,100,.7);
 }
-.avatar { width: 70px; height: 70px; }
 
-/* Theme button */
+/* THEME BUTTON */
 #themeToggle {
  padding: 10px 14px;
  border-radius: 50%;
@@ -49,17 +53,23 @@ body {
  font-size: 18px;
 }
 
-/* Hero Section */
+/* HERO SECTION */
 .hero { text-align: center; padding-top: 50px; }
 .hero h1 { 
-  font-size: 50px; 
-  letter-spacing: 2px; 
-  color: #e0e0e0; /* এখানে আগে গোল্ডেন ছিল, এখন সাদা হবে */
+ font-size: 50px; 
+ letter-spacing: 0; /* IMPORTANT FIX */
+ color: #e0e0e0;
 }
 .hero p { font-style: italic; color: #e0c097; margin-top: 15px; }
 
-/* Container & Cards */
-.container { max-width: 850px; margin: auto; padding: 50px 20px; }
+/* CONTAINER */
+.container {
+ max-width: 850px;
+ margin: auto;
+ padding: 50px 20px;
+}
+
+/* CARDS */
 .card {
  display: block;
  background: rgba(70,45,25,.85);
@@ -68,9 +78,9 @@ body {
  border-radius: 12px;
  text-decoration: none;
  color: #ffffff;
- transition: .3s;
  position: relative;
  overflow: hidden;
+ transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .card::before {
  content:"";
@@ -79,8 +89,12 @@ body {
  height:100%; width:6px;
  background:#ffdfaa;
 }
+.card:hover {
+ transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+ box-shadow: 0 15px 25px rgba(255,223,170,0.5);
+}
 
-/* Reading page */
+/* READING PAGE */
 .read {
  background: rgba(60,35,20,.9);
  border-radius: 12px;
@@ -90,16 +104,18 @@ body {
  width: 90%;
 }
 .container.read h1 { text-align: center; }
+
+/* POEM TEXT (PRO TYPOGRAPHY) */
 .poem {
  font-family: 'Hind Siliguri', sans-serif;
- font-size: 17px;
- line-height: 1.8;
+ font-size: 18px;
+ line-height: 1.85;
  white-space: pre-wrap;
  letter-spacing: 0;
  word-spacing: 0;
 }
 
-/* Back button */
+/* BACK BUTTON */
 .read a, a[href*="index.html"] {
  display: inline-block;
  margin-top: 25px;
@@ -120,18 +136,25 @@ body {
  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* About popup */
+/* ABOUT BUTTON */
 #aboutBtn {
- position: fixed; bottom: 20px; right: 20px;
+ position: fixed;
+ bottom: 20px;
+ right: 20px;
  padding: 12px 20px;
- background: black; color: #ffdfaa;
+ background: black;
+ color: #ffdfaa;
  border: 1px solid #ffdfaa;
  border-radius: 20px;
  cursor: pointer;
+ z-index: 999;
 }
+
+/* ABOUT POPUP */
 #aboutPopup {
  display: none;
- position: fixed; inset: 0;
+ position: fixed;
+ inset: 0;
  background: rgba(0,0,0,.8);
  justify-content: center;
  align-items: center;
@@ -147,72 +170,54 @@ body {
 }
 #closeAbout {
  position: absolute;
- top: 10px; right: 15px;
+ top: 10px;
+ right: 15px;
  cursor: pointer;
 }
 
-/* Light Mode */
+/* LIGHT MODE */
 .light {
- background: #f4efe6;
+ background: #f4efe6 !important;
+ background-image: none !important;
  color: #2c1b10;
 }
-.light .card, .light .read {
+.light .card,
+.light .read {
  background: white;
  color: #2c1b10;
 }
-.light #themeToggle, .light #aboutBtn {
+.light #themeToggle,
+.light #aboutBtn {
  background: white;
  color: black;
 }
+.light .hero h1 { color:#2c1b10; }
 
-/* Mobile Optimization */
+/* TEXT ANIMATION (ONLY TITLES + BUTTONS) */
+.read h1,
+.read a {
+ opacity: 0;
+ transform: translateY(-40px);
+ animation: textSlideUp 0.8s ease forwards;
+}
+.read a { animation-delay: .1s; }
+
+@keyframes textSlideUp {
+ from { opacity: 0; transform: translateY(-40px); }
+ to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE OPTIMIZATION */
 @media(max-width:600px){
  .hero h1 { font-size: 28px; }
  .hero-avatar { width: 90px; height: 90px; }
  .container { padding: 30px 15px; }
  .read { padding: 20px; }
-}
 
-/* Card water-like hover effect */
-.card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.card:hover {
-  transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
-  box-shadow: 0 15px 25px rgba(255,223,170,0.5);
-}
-/* Text Shift Animation */
-.read h1,
-.read .poem,
-.read a {
-  opacity: 0;
-  transform: translateY(-40px);
-  animation: textSlideUp 0.8s ease forwards;
-}
-
-.read .poem {
-  animation-delay: 0.6s;
-}
-
-.read a {
-  animation-delay: 0.10s;
-}
-
-@keyframes textSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media(max-width:600px){
-  .poem {
-    font-size: 16px;
-    line-height: 1.75;
-    letter-spacing: 0 !important;
-    word-spacing: 0 !important;
-  }
+ .poem {
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+ }
 }
