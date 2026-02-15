@@ -189,6 +189,20 @@ body.fade-out {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Initial state: up and transparent */
+.stagger {
+  opacity: 0;
+  transform: translateY(-20px);
+  display: inline-block; /* necessary for span based text */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* When visible */
+.stagger.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Card water-like hover effect */
 .card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
