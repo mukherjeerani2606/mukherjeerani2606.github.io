@@ -107,9 +107,6 @@ body{
 /* Reading page */
 /* Reading page */
 .read{
- .read h1{
- text-align:center;
-}
  background:rgba(60,35,20,.9);
  border-radius:12px;
  padding:30px;
