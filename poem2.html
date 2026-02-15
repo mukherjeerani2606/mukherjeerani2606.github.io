@@ -8,11 +8,13 @@
 </head>
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
     <img src="author.jpg" class="avatar">
     <button id="themeToggle">🌙</button>
 </div>
 
+<!-- Hero / Container -->
 <div class="container read">
 <h1>স্বার্থ</h1>
 
@@ -42,6 +44,60 @@
 <a href="index.html">← ফিরে যাও</a>
 </div>
 
-<script src="script.js"></script>
+<!-- Music -->
+<audio id="bgMusic" loop>
+  <source src="instrumental.mp4" type="audio/mp4">
+</audio>
+
+<button id="musicToggle" style="
+position: fixed;
+bottom: 80px;
+right: 20px;
+padding: 12px 18px;
+background: black;
+color: #ffdfaa;
+border: 1px solid #ffdfaa;
+border-radius: 20px;
+cursor: pointer;
+z-index: 999;
+">
+🎵
+</button>
+
+<!-- Script -->
+<script>
+const themeBtn = document.getElementById("themeToggle");
+
+// Theme toggle (same as 1st page)
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    if (document.body.classList.contains("light")) {
+      themeBtn.textContent = "☀️";
+    } else {
+      themeBtn.textContent = "🌙";
+    }
+  });
+}
+
+// Music control
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+
+if (music && musicBtn) {
+  music.volume = 0.5;
+
+  musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      musicBtn.textContent = "🔊";
+    } else {
+      music.pause();
+      musicBtn.textContent = "🎵";
+    }
+  });
+}
+</script>
+
 </body>
 </html>
