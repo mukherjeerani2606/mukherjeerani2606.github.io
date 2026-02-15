@@ -31,22 +31,36 @@ if (aboutBtn && popup && closeBtn) {
     if (e.target === popup) popup.style.display = "none";
   });
 }
+// ====================
+// Music persistence
+// ====================
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
+// Check localStorage if music was playing
 if (music && musicBtn) {
+  if (localStorage.getItem("musicPlaying") === "true") {
+    music.play();
+    musicBtn.textContent = "🔊";
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵";
+  }
 
-  music.volume = 0.50; // subtle volume (50%)
+  music.volume = 0.5;
 
   musicBtn.addEventListener("click", () => {
     if (music.paused) {
       music.play();
       musicBtn.textContent = "🔊";
+      localStorage.setItem("musicPlaying", "true");
     } else {
       music.pause();
       musicBtn.textContent = "🎵";
+      localStorage.setItem("musicPlaying", "false");
     }
   });
 }
+
 
 
