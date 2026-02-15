@@ -10,10 +10,12 @@
 
 <!-- Top Bar -->
 <div class="top-bar">
-    <button id="themeToggle">🌙</button>
+  <button id="themeToggle">🌙</button>
+  <button id="langToggle">EN</button>
 </div>
 
-   <audio id="bgMusic" loop>
+<!-- Background Music -->
+<audio id="bgMusic" loop>
   <source src="instrumental.mp4" type="audio/mp4">
 </audio>
 
@@ -31,44 +33,163 @@ z-index: 999;
 ">
 🎵
 </button>
-    
-<!-- Hero Section -->
-<section class="hero">
-    <img src="author.jpg" class="hero-avatar" alt="Author Image">
-    <h1>রাণী মুখার্জী</h1>
-    <p>শব্দে বোনা অনুভূতির ঘর</p>
-</section>
 
-<div class="container">
-    <a href="poem1.html" class="card">
+<!-- Pages Container -->
+<div id="pageContainer">
+
+  <!-- Home Page -->
+  <div class="page" id="homePage">
+    <section class="hero">
+      <img src="author.jpg" class="hero-avatar" alt="Author Image">
+      <h1>রাণী মুখার্জী</h1>
+      <p>শব্দে বোনা অনুভূতির ঘর</p>
+    </section>
+
+    <div class="container">
+      <a href="#" class="card navBtn" data-target="poem1">
         <h2>নববর্ষ | কবিতা</h2>
         <p>অপ্রিয় সত্য কথা ...</p>
-    </a>
+      </a>
 
-    <a href="poem2.html" class="card">
+      <a href="#" class="card navBtn" data-target="poem2">
         <h2>স্বার্থ | কবিতা</h2>
         <p>মানুষের স্বার্থপরতার বাস্তবতা...</p>
-    </a>
-</div>
-
-<!-- About Author -->
-<div id="aboutBtn">About Author</div>
-
-<div id="aboutPopup">
-  <div class="popup-box">
-    <span id="closeAbout">✖</span>
-    <h3>About the Author</h3>
-    <p>
-আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
-আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
-আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
-সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
-আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।
-    </p>
+      </a>
+    </div>
   </div>
+
+  <!-- Poem 1 -->
+  <div class="page" id="poem1" style="display:none;">
+    <div class="container read">
+      <h1>নববর্ষ</h1>
+      <pre class="poem">
+বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে 
+    বলে প্রনাম নিও, ও বলে আশীষ দিও!
+জেঠু-জেঠি, মামা-মামি, পিসি-পিসে 
+    শুভেচ্ছা জানায় সবাই ফোনের ভেতর দিয়ে।
+
+ঘরে আনা হচ্ছে মাংস মিষ্টি 
+    যাতে পড়ে লোকের দৃষ্টি
+হোয়াটস্অ্যাপ , ভিডিও কল, ফেসবুক 
+    নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
+
+হয়তো তুমি, তাকেও জানিয়েছো ফোনে শুভেচ্ছা 
+    যার পাশে বসে বলতে পারতে কথা !
+যদি তুমিও মেতেছ ফোনের মাধ্যমে 
+    তবে প্রশ্ন করে নিজেকে!
+
+বাড়ির কাউকে কী জানিয়েছো শুভেচ্ছা ?? 
+    করেছ কী প্রনাম ??
+      </pre>
+      <a href="#" class="navBtn" data-target="homePage">← ফিরে যাও</a>
+    </div>
+  </div>
+
+  <!-- Poem 2 -->
+  <div class="page" id="poem2" style="display:none;">
+    <div class="container read">
+      <h1>স্বার্থ</h1>
+      <pre class="poem">
+দুনিয়াটা স্বার্থে ভরা 
+স্বার্থ ছাড়া সবই মরা !
+বন্ধু হোক সে যতই আপন 
+ভালোবাসাতে সবাই কূপন
+
+নিজের স্বার্থ ফুরালে বুঝি 
+কেউ কাউকে না চিনি 
+যতই ভাবি আাপন সবাই 
+ততই বেশি ঠকায় সবাই
+
+হাসলে আমি থাকবে সে 
+কাঁদলে পরে 'তুমি' কে ??
+এ জগতের কেউ কারো নয় 
+মনে পড়ে তার , যখন পার হয় না সময় 
+
+তাই তো বলি... 
+কও না কথা কথা আমার সনে 
+থাকবো আমি আপন মনে 
+দুনিয়াটা স্বার্থে ভরা 
+স্বার্থ ছাড়া সবই মরা !
+      </pre>
+      <a href="#" class="navBtn" data-target="homePage">← ফিরে যাও</a>
+    </div>
+  </div>
+
 </div>
 
-<script src="script.js"></script>
+<script>
+// =====================
+// Theme Toggle
+// =====================
+const themeBtn = document.getElementById("themeToggle");
+if(themeBtn){
+  themeBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("light");
+    themeBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+  });
+}
+
+// =====================
+// Music Toggle
+// =====================
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+
+if(music && musicBtn){
+  music.volume = 0.5;
+  musicBtn.addEventListener("click", ()=>{
+    if(music.paused){
+      music.play();
+      musicBtn.textContent = "🔊";
+    } else {
+      music.pause();
+      musicBtn.textContent = "🎵";
+    }
+  });
+}
+
+// =====================
+// Page Navigation without reload
+// =====================
+document.querySelectorAll(".navBtn").forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault();
+    const target = btn.dataset.target;
+    document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+    document.getElementById(target).style.display="block";
+  });
+});
+
+// =====================
+// Language Toggle
+// =====================
+const langBtn = document.getElementById("langToggle");
+let isEnglish = false;
+
+const translations = [
+  { bn: "নববর্ষ", en: "New Year" },
+  { bn: "স্বার্থ", en: "Selfishness" },
+  { bn: "রাণী মুখার্জী", en: "Rani Mukherjee" },
+  { bn: "শব্দে বোনা অনুভূতির ঘর", en: "A world woven with words and emotions" },
+  { bn: "← ফিরে যাও", en: "← Go Back" }
+];
+
+if(langBtn){
+  langBtn.addEventListener("click", ()=>{
+    isEnglish = !isEnglish;
+    langBtn.textContent = isEnglish ? "BN" : "EN";
+    document.querySelectorAll("h1,h2,p,pre,a").forEach(el=>{
+      translations.forEach(tr=>{
+        if(isEnglish){
+          if(el.textContent.includes(tr.bn)) el.textContent = el.textContent.replace(tr.bn,tr.en);
+        } else {
+          if(el.textContent.includes(tr.en)) el.textContent = el.textContent.replace(tr.en,tr.bn);
+        }
+      });
+    });
+  });
+}
+</script>
 
 </body>
 </html>
