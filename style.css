@@ -54,7 +54,7 @@ body {
 .hero h1 { 
   font-size: 40px; 
   letter-spacing: 2px; 
-  color: #ffffff; /* এখানে আগে গোল্ডেন ছিল, এখন সাদা হবে */
+  color: #e0e0e0; /* এখানে আগে গোল্ডেন ছিল, এখন সাদা হবে */
 }
 .hero p { font-style: italic; color: #e0c097; margin-top: 10px; }
 
