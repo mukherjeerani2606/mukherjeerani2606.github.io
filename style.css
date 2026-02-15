@@ -202,5 +202,10 @@ body{
 .read{
  padding:20px;
 }
-
+.poem{
+ font-family:'Noto Serif Bengali',serif;
+ font-size:18px;
+ line-height:1.9;
+ white-space:pre-wrap;
+}
 }
