@@ -33,24 +33,14 @@ if (aboutBtn && popup && closeBtn) {
 }
 
 // Smooth page transition
-/* Page transition: top-to-bottom fade effect */
-body {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-body.fade-out {
-  opacity: 0;
-  transform: translateY(50px); /* page slide down while fading */
-}
+// Smooth top-to-bottom page transition
 document.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
     let href = this.getAttribute('href');
-    document.body.classList.add('fade-out');
+    document.body.classList.add('fade-out');  // trigger CSS fade + slide
     setTimeout(() => {
       window.location = href;
-    }, 400); // fade duration match CSS
+    }, 500); // duration match CSS transition
   });
 });
