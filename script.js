@@ -8,32 +8,7 @@ if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light");
   if (themeBtn) themeBtn.textContent = "☀️";
 }
-// Slide down + fade effect on page load for content
 
-
-window.addEventListener('DOMContentLoaded', () => {
-  // Select only text elements you want to animate
-  const textElements = document.querySelectorAll('.read h1, .read .poem');
-
-  textElements.forEach(el => {
-    // Wrap each line in span for stagger
-    const lines = el.innerHTML.split('\n');
-    el.innerHTML = ''; // empty original content
-
-    lines.forEach((line, index) => {
-      const span = document.createElement('span');
-      span.classList.add('text-animate');
-      span.style.display = 'block';
-      span.innerHTML = line;
-      el.appendChild(span);
-
-      // staggered animation
-      setTimeout(() => {
-        span.classList.add('visible');
-      }, index * 150); // adjust delay as needed
-    });
-  });
-});
 // Theme toggle
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
@@ -56,42 +31,3 @@ if (aboutBtn && popup && closeBtn) {
     if (e.target === popup) popup.style.display = "none";
   });
 }
-
-// Smooth page transition
-// Smooth top-to-bottom page transition
-document.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    let href = this.getAttribute('href');
-    document.body.classList.add('fade-out');  // trigger CSS fade + slide
-    setTimeout(() => {
-      window.location = href;
-    }, 500); // duration match CSS transition
-  });
-});
-// For any container you want to animate
-window.addEventListener('DOMContentLoaded', () => {
-  // Choose the elements to animate (e.g., all paragraphs or poem lines)
-  const lines = document.querySelectorAll('.poem, .card h2, .hero h1, .hero p');
-
-  lines.forEach(line => {
-    const words = line.textContent.split(' ');
-    line.textContent = ''; // empty original line
-
-    // wrap each word in span.stagger
-    words.forEach(word => {
-      const span = document.createElement('span');
-      span.textContent = word + ' ';
-      span.classList.add('stagger');
-      line.appendChild(span);
-    });
-
-    // add visible class with staggered delay
-    const spans = line.querySelectorAll('span.stagger');
-    spans.forEach((span, idx) => {
-      setTimeout(() => {
-        span.classList.add('visible');
-      }, idx * 150); // 150ms delay per word
-    });
-  });
-});
