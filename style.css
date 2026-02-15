@@ -178,7 +178,17 @@ body.fade-out {
   opacity: 0;
   transform: translateY(50px); /* page slide down while fading */
 }
+/* Page content fade from top */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(-30px); /* উপরে থেকে শুরু করবে */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Card water-like hover effect */
 .card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
