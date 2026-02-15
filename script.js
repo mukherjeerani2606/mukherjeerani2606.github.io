@@ -203,7 +203,8 @@ if(langBtn){
 // ====================
 // About Author Translation
 // ====================
-const aboutText = document.querySelector("#aboutPopup p");
+// About Author translation
+const aboutText = document.querySelector("#aboutPopup p"); // popup p element
 const aboutTranslation = {
   bn: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
 আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
@@ -217,17 +218,17 @@ I love reflecting on society, the complex chemistry of human minds, and unexpres
 If my writing touches some hidden feeling in your heart, my effort is worthwhile.`
 };
 
-// ====================
-// Update About Author text whenever language toggles
-// ====================
-if(langBtn && aboutText){
-  const updateAboutText = () => {
+// Function to update About Author text
+function updateAboutText() {
+  if(aboutText){
     aboutText.textContent = isEnglish ? aboutTranslation.en : aboutTranslation.bn;
-  };
+  }
+}
 
-  // Call initially in case About Author is open
-  updateAboutText();
-
-  // Also call whenever language toggle changes
+// Call update whenever language toggles
+if(langBtn){
   langBtn.addEventListener("click", updateAboutText);
 }
+
+// Also call once at load in case About Author is already open
+updateAboutText();
