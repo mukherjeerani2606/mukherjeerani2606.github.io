@@ -110,11 +110,15 @@ body{
  background:rgba(60,35,20,.9);
  border-radius:12px;
  padding:30px;
- margin:140px auto 40px auto;   /* center + top spacing */
- max-width:700px;               /* width control */
- width:90%;                     /* mobile friendly spacing */
+ margin:140px auto 40px auto;
+ max-width:700px;
+ width:90%;
 }
 
+.read h1{
+ text-align:center;
+ margin-bottom:20px;
+}
 
 /* About button */
 #aboutBtn{
