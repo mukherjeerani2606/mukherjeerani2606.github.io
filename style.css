@@ -252,4 +252,26 @@ a[href="index.html"]:hover,
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+ .read a, a[href*="index.html"] {
+    display: inline-block; /* ensure visible on all screens */
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #ffdfaa;
+    color: #3a2415 !important;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid #ffdfaa;
+    transition: 0.3s all ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* hover effect */
+.read a:hover, a[href*="index.html"]:hover {
+    background-color: #f5e6c8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 }
