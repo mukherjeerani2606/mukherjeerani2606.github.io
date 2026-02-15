@@ -32,3 +32,21 @@ if (aboutBtn && popup && closeBtn) {
   });
 }
 
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+
+if (music && musicBtn) {
+
+  music.volume = 0.25; // subtle volume (25%)
+
+  musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      musicBtn.textContent = "🔊";
+    } else {
+      music.pause();
+      musicBtn.textContent = "🎵";
+    }
+  });
+}
+
