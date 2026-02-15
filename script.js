@@ -31,3 +31,14 @@ if (aboutBtn && popup && closeBtn) {
     if (e.target === popup) popup.style.display = "none";
   });
 }
+// Smooth page transition
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    let href = this.getAttribute('href');
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location = href;
+    }, 400); // fade duration match CSS
+  });
+});
