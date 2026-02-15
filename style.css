@@ -117,10 +117,6 @@ body{
 .container.read h1{
  text-align:center;
 }
-.read h1{
- text-align:center;
- margin-bottom:20px;
-}
 
 /* About button */
 #aboutBtn{
