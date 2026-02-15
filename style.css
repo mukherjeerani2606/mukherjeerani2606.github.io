@@ -63,7 +63,7 @@ body{
 /* Hero section */
 .hero{
  text-align:center;
- padding-top:90px;   /* was 160px */
+ padding-top:70px;   /* was 160px */
 }
 
 .hero h1{
