@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
- font-family: 'Noto Serif Bengali', serif;
+ font-family: 'Hind Siliguri', sans-serif;
  background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
  background-size: cover;
  background-position: center;
@@ -91,10 +91,12 @@ body {
 }
 .container.read h1 { text-align: center; }
 .poem {
- font-family: 'Noto Serif Bengali', serif;
- font-size: 16px;
- line-height: 1.9;
+ font-family: 'Hind Siliguri', sans-serif;
+ font-size: 17px;
+ line-height: 1.8;
  white-space: pre-wrap;
+ letter-spacing: 0;
+ word-spacing: 0;
 }
 
 /* Back button */
@@ -170,6 +172,7 @@ body {
  .container { padding: 30px 15px; }
  .read { padding: 20px; }
 }
+
 /* Card water-like hover effect */
 .card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -205,4 +208,11 @@ body {
     transform: translateY(0);
   }
 }
-
+@media(max-width:600px){
+  .poem {
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+  }
+}
