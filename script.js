@@ -198,19 +198,24 @@ if(langBtn){
     // ====================
     // About Author Translation
     // ====================
-    const aboutText = document.querySelector("#aboutPopup p");
-    if(aboutText){
-      aboutText.textContent = isEnglish 
-        en:`I am Rani Mukherjee, an engineering student, but I love writing beyond my profession.  
+const aboutText = document.querySelector("#aboutPopup p");
+const aboutTranslation = {
+  bn: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
+আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
+আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
+সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
+আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।`,
+  en: `I am Rani Mukherjee, an engineering student, but I love writing beyond my profession.  
 To me, the world is a collection of countless small emotions.  
 I believe that what cannot be spoken can be expressed clearly with the stroke of a pen.  
 I love reflecting on society, the complex chemistry of human minds, and unexpressed emotions.  
 If my writing touches some hidden feeling in your heart, my effort is worthwhile.`
-        bn: `আমি রাণী মুখার্জী, এক ইঞ্জিনিয়ারিং ছাত্রী, তবে পেশার বাইরের জগতটায় আমি লিখতে ভালোবাসি।  
-আমার কাছে পৃথিবী মানেই হাজারো ছোট ছোট অনুভূতির সমাহার।  
-আমি মনে করি, যা মুখে বলা যায় না, তা কলমের আঁচড়ে সহজে বুঝিয়ে দেওয়া যায়।  
-সমাজ, মানুষের মনের জটিল রসায়ন আর অব্যক্ত আবেগগুলো নিয়ে ভাবতেই আমি সবচেয়ে বেশি ভালোবাসি।  
-আমার লেখায় যদি আপনার মনের কোনো সুপ্ত অনুভূতি স্পর্শ পায়, তবেই আমার পরিশ্রম সার্থক।`;
-    }
+};
+
+// Replace About Author text on language toggle
+if(langBtn && aboutText){
+  langBtn.addEventListener("click", ()=>{
+    aboutText.textContent = isEnglish ? aboutTranslation.en : aboutTranslation.bn;
   });
 }
+
