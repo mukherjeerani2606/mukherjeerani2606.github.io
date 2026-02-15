@@ -49,29 +49,7 @@
   </div>
 </div>
 
-<script>
-/* Theme */
-const t = document.getElementById("themeToggle");
-
-t.onclick = () => {
- document.body.classList.toggle("light");
- t.innerHTML = document.body.classList.contains("light") ? "☀️" : "🌙";
-};
-
-/* About popup */
-const aboutBtn = document.getElementById("aboutBtn");
-const popup = document.getElementById("aboutPopup");
-const close = document.getElementById("closeAbout");
-
-aboutBtn.onclick = ()=> popup.style.display="flex";
-close.onclick = ()=> popup.style.display="none";
-
-window.onclick = function(e){
-  if(e.target === popup){
-    popup.style.display="none";
-  }
-};
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
