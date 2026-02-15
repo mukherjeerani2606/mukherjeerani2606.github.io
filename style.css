@@ -107,13 +107,16 @@ body{
 /* Reading page */
 /* Reading page */
 .read{
- background:rgba(60,35,20,.9);
- border-radius:12px;
- padding:30px;
+ display:block;
+ background:rgba(70,45,25,.85);
+ padding:25px;
  margin:140px auto 40px auto;
- max-width:700px;
+ border-radius:12px;
+ max-width:850px;
  width:90%;
+ color:#f5e6c8;
 }
+
 .container.read h1{
  text-align:center;
 }
