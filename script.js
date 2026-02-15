@@ -9,16 +9,31 @@ if (localStorage.getItem("theme") === "light") {
   if (themeBtn) themeBtn.textContent = "☀️";
 }
 // Slide down + fade effect on page load for content
+
+
 window.addEventListener('DOMContentLoaded', () => {
-  const fadeElements = document.querySelectorAll('.container, .read, .hero h1, .hero p, .card');
-  fadeElements.forEach((el, index) => {
-    el.classList.add('fade-slide');
-    setTimeout(() => {
-      el.classList.add('visible');
-    }, 100 + index * 100); // staggered effect
+  // Select only text elements you want to animate
+  const textElements = document.querySelectorAll('.read h1, .read .poem');
+
+  textElements.forEach(el => {
+    // Wrap each line in span for stagger
+    const lines = el.innerHTML.split('\n');
+    el.innerHTML = ''; // empty original content
+
+    lines.forEach((line, index) => {
+      const span = document.createElement('span');
+      span.classList.add('text-animate');
+      span.style.display = 'block';
+      span.innerHTML = line;
+      el.appendChild(span);
+
+      // staggered animation
+      setTimeout(() => {
+        span.classList.add('visible');
+      }, index * 150); // adjust delay as needed
+    });
   });
 });
-
 // Theme toggle
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
