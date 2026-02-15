@@ -35,37 +35,3 @@ if(aboutBtn && popup && close){
     }
   };
 }
-
-const langBtn = document.getElementById("langToggle");
-
-if(langBtn){
-
-  if(localStorage.getItem("lang") === "en"){
-    switchToEnglish();
-  }
-
-  langBtn.onclick = () => {
-    if(localStorage.getItem("lang") === "en"){
-      switchToBangla();
-    }else{
-      switchToEnglish();
-    }
-  };
-
-  function switchToEnglish(){
-    document.querySelectorAll("[data-en]").forEach(el=>{
-      el.innerText = el.getAttribute("data-en");
-    });
-    localStorage.setItem("lang","en");
-    langBtn.innerText = "BN";
-  }
-
-  function switchToBangla(){
-    document.querySelectorAll("[data-bn]").forEach(el=>{
-      el.innerText = el.getAttribute("data-bn");
-    });
-    localStorage.setItem("lang","bn");
-    langBtn.innerText = "EN";
-  }
-}
-
