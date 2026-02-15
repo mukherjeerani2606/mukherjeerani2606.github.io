@@ -51,7 +51,11 @@ body {
 
 /* Hero Section */
 .hero { text-align: center; padding-top: 50px; }
-.hero h1 { font-size: 40px; letter-spacing: 2px; }
+.hero h1 { 
+  font-size: 40px; 
+  letter-spacing: 2px; 
+  color: #ffffff; /* এখানে আগে গোল্ডেন ছিল, এখন সাদা হবে */
+}
 .hero p { font-style: italic; color: #e0c097; margin-top: 10px; }
 
 /* Container & Cards */
@@ -63,7 +67,7 @@ body {
  margin: 20px 0;
  border-radius: 12px;
  text-decoration: none;
- color: #f5e6c8;
+ color: #ffffff;
  transition: .3s;
  position: relative;
  overflow: hidden;
