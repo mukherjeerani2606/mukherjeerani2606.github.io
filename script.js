@@ -54,6 +54,19 @@ function applyLang(){
  });
 }
 
+let aboutData={};
+
+fetch("about.json")
+.then(r=>r.json())
+.then(d=>{
+ aboutData=d;
+ updateAbout();
+});
+
+function updateAbout(){
+ document.getElementById("aboutText").textContent=aboutData[lang];
+}
+
 /* Language toggle */
 document.getElementById("langToggle").onclick=()=>{
  lang=lang==="bn"?"en":"bn";
