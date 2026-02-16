@@ -79,15 +79,17 @@ body{
 #musicToggle{
  width:36px;
  height:36px;
- padding:0;
+ padding:1;
  display:flex;
  align-items:center;
  justify-content:center;
  border-radius:50%;
- border:none;
  cursor:pointer;
  background:black;
  color:#ffdfaa;
+ border:1px solid #ffdfaa;
+ border-radius:16px;
+ z-index:999;
  font-size:14px;
 }
 
@@ -95,7 +97,7 @@ body{
 #musicToggle{
  position:fixed;
  top:50px;   /* EN এর নিচে নামাবে */
- right:40px;
+ right:20px;
 }
 
 #aboutBtn{
