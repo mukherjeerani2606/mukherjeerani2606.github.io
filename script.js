@@ -116,18 +116,29 @@ document.getElementById("themeToggle").onclick = () => {
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-// default OFF
-musicBtn.textContent = "▶️ 🎵";
+if (music && musicBtn) {
+  music.volume = 0.5;
 
-musicBtn.onclick = () => {
- if(music.paused){
-  music.play();
-  musicBtn.textContent = "⏸️ 🎵";
- } else {
-  music.pause();
-  musicBtn.textContent = "▶️ 🎵";
- }
-};
+  // Load saved state
+  if(localStorage.getItem("musicPlaying")==="true"){
+    music.play();
+    musicBtn.textContent="🔊";
+  } else {
+    musicBtn.textContent="🎵";
+  }
+
+  musicBtn.onclick = () => {
+    if(music.paused){
+      music.play();
+      musicBtn.textContent="🔊";
+      localStorage.setItem("musicPlaying","true");
+    } else {
+      music.pause();
+      musicBtn.textContent="🎵";
+      localStorage.setItem("musicPlaying","false");
+    }
+  };
+}
 
 /* ================= ABOUT POPUP ================= */
 const popup = document.getElementById("aboutPopup");
