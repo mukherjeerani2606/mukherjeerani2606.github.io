@@ -94,15 +94,24 @@ body{
 
 #musicToggle{
  position:fixed;
- top:25px;   /* EN এর নিচে নামাবে */
+ top:30px;   /* EN এর নিচে নামাবে */
  right:20px;
 }
 
 #aboutBtn{
- position:fixed;bottom:20px;right:20px;
- padding:10px 18px;background:black;color:#ffdfaa;
- border:1px solid #ffdfaa;border-radius:20px;cursor:pointer;z-index:999;
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ padding:6px 14px;
+ background:black;
+ color:#ffdfaa;
+ border:1px solid #ffdfaa;
+ border-radius:16px;
+ cursor:pointer;
+ z-index:999;
+ font-size:13px;
 }
+
 
 #aboutPopup{
  display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
