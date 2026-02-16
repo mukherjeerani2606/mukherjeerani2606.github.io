@@ -108,8 +108,26 @@ document.getElementById("langToggle").onclick = () => {
 };
 
 /* ================= THEME ================= */
-document.getElementById("themeToggle").onclick = () => {
- document.body.classList.toggle("light");
+const themeBtn = document.getElementById("themeToggle");
+
+// Load saved theme
+if(localStorage.getItem("theme")==="light"){
+  document.body.classList.add("light");
+  themeBtn.textContent="☀️";
+} else {
+  themeBtn.textContent="🌙";
+}
+
+themeBtn.onclick = () => {
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    themeBtn.textContent="☀️";
+    localStorage.setItem("theme","light");
+  } else {
+    themeBtn.textContent="🌙";
+    localStorage.setItem("theme","dark");
+  }
 };
 
 /* ================= MUSIC ================= */
