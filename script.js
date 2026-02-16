@@ -60,6 +60,23 @@ function initNavigation(){
  });
 }
 
+/* ================= HERO SECTION ================= */
+function updateHero(){
+  const heroName = document.getElementById("authorName");
+  const tagline  = document.getElementById("tagline");
+  const pageTitle = document.querySelector("title");
+
+  if(lang === "bn"){
+    heroName.textContent = "রাণী মুখার্জী";
+    tagline.textContent  = "শব্দে বোনা অনুভূতির ঘর";
+    pageTitle.textContent = "রাণীর সাহিত্য ভুবন";
+  } else {
+    heroName.textContent = "Rani Mukherjee";
+    tagline.textContent  = "A world woven with words and emotions";
+    pageTitle.textContent = "Rani's Literary World";
+  }
+}
+
 /* ================= LANGUAGE ================= */
 function applyLang(){
  poems.forEach(p=>{
