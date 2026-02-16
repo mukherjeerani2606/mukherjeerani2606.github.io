@@ -5,121 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>রাণীর সাহিত্য ভুবন</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
- font-family:'Noto Serif Bengali',serif;
- background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
- url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
- background-size:cover;
- background-position:center;
- background-repeat:no-repeat;
- background-attachment:fixed;
- color:#f5e6c8;
- line-height:1.7;
- transition:.3s;
-}
-.top-bar{
- position:fixed;top:15px;left:15px;right:15px;
- display:flex;justify-content:space-between;z-index:999;
-}
-.hero{text-align:center;padding-top:60px;}
-.hero-avatar{
- width:120px;height:120px;border-radius:50%;
- object-fit:cover;border:3px solid #ffdfaa;
- box-shadow:0 0 25px rgba(255,200,100,.7);
-}
-.hero h1{font-size:50px;letter-spacing:2px;color:#e0e0e0;}
-.hero p{color:#e0c097;margin-top:15px;font-style:italic;}
-
-.container{max-width:850px;margin:auto;padding:50px 20px;}
-
-.card{
- display:block;background:rgba(70,45,25,.85);
- padding:25px 25px 25px 35px;margin:20px 0;
- border-radius:12px;text-decoration:none;color:white;
- position:relative;overflow:hidden;
- transition:.4s;
-}
-.card::before{
- content:"";position:absolute;left:0;top:0;height:100%;width:6px;background:#ffdfaa;
-}
-.card:hover{
- transform:translateY(-8px) rotateX(2deg) rotateY(2deg);
- box-shadow:0 15px 25px rgba(255,223,170,.5);
-}
-
-.read{
- background:rgba(60,35,20,.9);
- border-radius:12px;padding:30px;
- margin:140px auto 40px auto;
- max-width:700px;width:90%;
-}
-.read h1{text-align:center;}
-.poem{font-size:18px;line-height:1.9;white-space:pre-wrap;}
-
-.read a{
- display:inline-block;margin-top:25px;padding:10px 25px;
- background:#ffdfaa;color:#3a2415;text-decoration:none;
- border-radius:25px;font-weight:bold;border:1px solid #ffdfaa;
- transition:.3s;
-}
-.read a:hover{
- background:#f5e6c8;transform:translateY(-2px);
- box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-#themeToggle,#langToggle{
- padding:10px 14px;border-radius:50%;
- border:none;cursor:pointer;background:black;color:#ffdfaa;font-size:18px;
-}
-
-#aboutBtn{
- position:fixed;bottom:20px;right:20px;
- padding:12px 20px;background:black;color:#ffdfaa;
- border:1px solid #ffdfaa;border-radius:20px;cursor:pointer;z-index:999;
-}
-#aboutPopup{
- display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
- justify-content:center;align-items:center;
-}
-.popup-box{
- background:#3a2415;padding:25px;border-radius:12px;color:#ffdfaa;
- width:90%;max-width:400px;position:relative;
-}
-#closeAbout{position:absolute;top:10px;right:15px;cursor:pointer;}
-
-#musicToggle{
- position:fixed;bottom:80px;right:20px;
- padding:12px 18px;background:black;color:#ffdfaa;
- border:1px solid #ffdfaa;border-radius:20px;cursor:pointer;z-index:999;
-}
-
-.light{
- background:#f4efe6!important;background-image:none!important;color:#2c1b10;
-}
-.light .card,.light .read{background:white;color:#2c1b10;}
-.light #themeToggle,.light #aboutBtn,.light #musicToggle{background:white;color:black;}
-.light .hero h1{color:#2c1b10;}
-
-.text-animate{opacity:0;transform:translateY(-40px);animation:textSlideUp .8s forwards;}
-.poem-delay{animation-delay:.6s;}
-.btn-delay{animation-delay:1s;}
-
-@keyframes textSlideUp{
- from{opacity:0;transform:translateY(-40px);}
- to{opacity:1;transform:translateY(0);}
-}
-
-@media(max-width:600px){
- .hero h1{font-size:28px;}
- .hero-avatar{width:90px;height:90px;}
- .container{padding:30px 15px;}
- .read{padding:20px;}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -134,27 +21,14 @@ body{
 </audio>
 <button id="musicToggle">🎵</button>
 
-<div id="pageContainer">
-
-<!-- HOME -->
 <div class="page" id="homePage">
 <section class="hero">
  <img src="author.jpg" class="hero-avatar">
- <h1 data-i18n="name">রাণী মুখার্জী</h1>
- <p data-i18n="tagline">শব্দে বোনা অনুভূতির ঘর</p>
+ <h1 id="authorName">রাণী মুখার্জী</h1>
+ <p id="tagline">শব্দে বোনা অনুভূতির ঘর</p>
 </section>
 
-<div class="container">
- <a href="#" class="card navBtn" data-target="poem1">
-  <h2 data-i18n="poems.poem1.title"></h2>
-  <p data-i18n="poems.poem1.desc"></p>
- </a>
-
- <a href="#" class="card navBtn" data-target="poem2">
-  <h2 data-i18n="poems.poem2.title"></h2>
-  <p data-i18n="poems.poem2.desc"></p>
- </a>
-</div>
+<div class="container" id="poemList"></div>
 
 <div id="aboutBtn">About Author</div>
 
@@ -167,25 +41,8 @@ body{
 </div>
 </div>
 
-<!-- POEM 1 -->
-<div class="page" id="poem1" style="display:none;">
- <div class="container read">
-  <h1 class="text-animate" data-i18n="poems.poem1.name"></h1>
-  <pre class="poem text-animate poem-delay" data-i18n="poems.poem1.text"></pre>
-  <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back"></a>
- </div>
-</div>
-
-<!-- POEM 2 -->
-<div class="page" id="poem2" style="display:none;">
- <div class="container read">
-  <h1 class="text-animate" data-i18n="poems.poem2.name"></h1>
-  <pre class="poem text-animate poem-delay" data-i18n="poems.poem2.text"></pre>
-  <a href="#" class="navBtn text-animate btn-delay" data-target="homePage" data-i18n="back"></a>
- </div>
-</div>
-
-</div>
+<!-- AUTO GENERATED POEM PAGES -->
+<div id="poemPages"></div>
 
 <script src="script.js"></script>
 </body>
