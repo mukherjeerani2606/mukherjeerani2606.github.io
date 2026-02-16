@@ -52,6 +52,7 @@ function applyLang(){
   document.getElementById("name_"+p.id).textContent=p["title_"+lang];
   document.getElementById("text_"+p.id).innerText=p["text_"+lang];
  });
+ updateAbout();
 }
 
 let aboutData={};
