@@ -128,7 +128,7 @@ function applyLang() {
 
         if (titleEl) titleEl.textContent = p["title_" + lang];
         if (descEl)  descEl.textContent  = p["desc_" + lang];
-        if (nameEl)  nameEl.textContent  = p["pagetitle_" + lang];
+        if (nameEl)  nameEl.textContent  = p["title_" + lang];
         if (textEl)  textEl.textContent  = p["text_" + lang];
     });
 
