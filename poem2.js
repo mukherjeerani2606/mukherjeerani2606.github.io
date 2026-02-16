@@ -15,22 +15,34 @@ poems.push({
 ততই বেশি ঠকায় সবাই
 
 হাসলে আমি থাকবে সে 
-কাঁদলে পরে 'তুমি' কে ?? 
+কাঁদলে পরে 'তুমি' কে ??
 এ জগতের কেউ কারো নয় 
-মনে পড়ে তার , যখন পার হয় না সময়`,
-  text_en: `The world is full of selfishness
-Without selfishness, everything dies!
-No matter how close a friend is
-Everyone cheats even in love.
+মনে পড়ে তার , যখন পার হয় না সময় 
 
-When one's own interest ends
-No one really knows anyone
-The more I think everyone is close
-The more everyone deceives.
+তাই তো বলি... 
+কও না কথা কথা আমার সনে 
+থাকবো আমি আপন মনে 
+দুনিয়াটা স্বার্থে ভরা 
+স্বার্থ ছাড়া সবই মরা !`,
+  text_en: `The world is full of selfishness, 
+without selfishness, everything dies!
+No matter how close a friend is, 
+even love can be deceptive.
 
-If I smile, he/she stays
-If I cry, who cares??
-No one belongs to anyone in this world
-They remember only when time is scarce`
+When one's own interest runs out, 
+people fail to truly know each other. 
+The more I consider everyone as close, 
+the more they disappoint me.
+
+If I smile, someone stays, 
+if I cry, who will notice? 
+No one really belongs to anyone in this world; 
+they only remember when time is short.
+
+So I say... 
+Do not speak much with me; 
+I will stay with my own thoughts. 
+The world is full of selfishness, 
+without selfishness, everything dies!`
 });
 buildUI();
