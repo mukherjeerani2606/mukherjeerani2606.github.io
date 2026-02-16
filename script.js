@@ -134,19 +134,18 @@ themeBtn.onclick = () => {
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-// default icon
-musicBtn.textContent = "▶️";
+// default OFF
+musicBtn.textContent = "▶️ 🎵";
 
 musicBtn.onclick = () => {
  if(music.paused){
- music.play();
- musicBtn.textContent="⏸️";
- musicBtn.classList.add("playing");
-}else{
- music.pause();
- musicBtn.textContent="▶️";
- musicBtn.classList.remove("playing");
-}
+  music.play();
+  musicBtn.textContent = "⏸️ 🎵";
+ } else {
+  music.pause();
+  musicBtn.textContent = "▶️ 🎵";
+ }
+};
 
 /* ================= ABOUT POPUP ================= */
 const popup = document.getElementById("aboutPopup");
