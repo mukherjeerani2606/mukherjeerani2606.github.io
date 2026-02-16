@@ -113,13 +113,3 @@ body{
  .read{padding:20px;}
  .poem{font-size:16px;}
 }
-
-#musicToggle.playing {
- animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
- 0%{transform:scale(1);}
- 50%{transform:scale(1.1);}
- 100%{transform:scale(1);}
-}
