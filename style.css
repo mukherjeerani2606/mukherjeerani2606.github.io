@@ -74,10 +74,23 @@ body{
  box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
-#themeToggle,#langToggle,#musicToggle{
- padding:10px 14px;border-radius:50%;
- border:none;cursor:pointer;background:black;color:#ffdfaa;font-size:18px;
+#themeToggle,
+#langToggle,
+#musicToggle{
+ width:36px;
+ height:36px;
+ padding:0;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ border:none;
+ cursor:pointer;
+ background:black;
+ color:#ffdfaa;
+ font-size:14px;
 }
+
 
 #musicToggle{
  position:fixed;
