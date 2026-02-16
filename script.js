@@ -134,28 +134,18 @@ themeBtn.onclick = () => {
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-if (music && musicBtn) {
-  music.volume = 0.5;
+// default icon
+musicBtn.textContent = "▶️";
 
-  // Load saved state
-  if(localStorage.getItem("musicPlaying")==="true"){
-    music.play();
-    musicBtn.textContent="🎵";
-  } else {
-    musicBtn.textContent="🔊";
-  }
-
-  musicBtn.onclick = () => {
-    if(music.paused){
-      music.play();
-      musicBtn.textContent="🎵";
-      localStorage.setItem("musicPlaying","true");
-    } else {
-      music.pause();
-      musicBtn.textContent="🔊";
-      localStorage.setItem("musicPlaying","false");
-    }
-  };
+musicBtn.onclick = () => {
+ if(music.paused){
+ music.play();
+ musicBtn.textContent="⏸️";
+ musicBtn.classList.add("playing");
+}else{
+ music.pause();
+ musicBtn.textContent="▶️";
+ musicBtn.classList.remove("playing");
 }
 
 /* ================= ABOUT POPUP ================= */
