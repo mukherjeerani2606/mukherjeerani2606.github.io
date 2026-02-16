@@ -79,7 +79,11 @@ body{
  border:none;cursor:pointer;background:black;color:#ffdfaa;font-size:18px;
 }
 
-#musicToggle{position:fixed;bottom:80px;right:20px;}
+#musicToggle{
+ position:fixed;
+ top:70px;   /* EN এর নিচে নামাবে */
+ right:20px;
+}
 
 #aboutBtn{
  position:fixed;bottom:20px;right:20px;
