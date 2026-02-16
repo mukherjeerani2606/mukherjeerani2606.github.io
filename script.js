@@ -20,7 +20,6 @@ fetch("about.json")
   updateAbout();
 });
 
-/* ================= BUILD UI ================= */
 function buildUI() {
     const poemList = document.getElementById("poemList");
     const poemPages = document.getElementById("poemPages");
@@ -29,28 +28,6 @@ function buildUI() {
     poemPages.innerHTML = "";
 
     poems.forEach(p => {
-    const titleEl = document.getElementById("title_" + p.id);
-    const descEl  = document.getElementById("desc_" + p.id);
-    const nameEl  = document.getElementById("name_" + p.id);
-    const textEl  = document.getElementById("text_" + p.id);
-    const backEl  = document.getElementById("back_" + p.id);
-
-    if (titleEl) titleEl.textContent = p["title_" + lang];
-    if (descEl)  descEl.textContent  = p["desc_" + lang];
-
-    if (nameEl){
-        let fullTitle = p["title_" + lang];
-        nameEl.textContent = fullTitle.split("|")[0].trim();
-    }
-
-    if (textEl)  textEl.textContent  = p["text_" + lang];
-
-    if (backEl){
-        backEl.textContent = (lang === "bn") ? "← ফিরে যাও" : "← Back";
-    }
-});
-
-      
 
         // Card
         const card = document.createElement("a");
@@ -97,9 +74,10 @@ function buildUI() {
         poemPages.appendChild(page);
     });
 
-    applyLang(); // <-- populate card titles & descriptions immediately
-    initNavigation(); // <-- attach nav events
+    applyLang();
+    initNavigation();
 }
+
 /* ================= NAVIGATION ================= */
 function initNavigation(){
   document.querySelectorAll(".navBtn").forEach(btn=>{
@@ -147,6 +125,7 @@ poems.forEach(p => {
     const descEl  = document.getElementById("desc_" + p.id);
     const nameEl  = document.getElementById("name_" + p.id);
     const textEl  = document.getElementById("text_" + p.id);
+    const backEl  = document.getElementById("back_" + p.id);
 
     if (titleEl) titleEl.textContent = p["title_" + lang];
     if (descEl)  descEl.textContent  = p["desc_" + lang];
@@ -157,7 +136,12 @@ poems.forEach(p => {
     }
 
     if (textEl)  textEl.textContent  = p["text_" + lang];
+
+    if (backEl){
+        backEl.textContent = (lang === "bn") ? "← ফিরে যাও" : "← Back";
+    }
 });
+
 
 updateAbout();
 updateLangButton();
