@@ -120,21 +120,27 @@ function applyLang() {
     document.getElementById("tagline").textContent = (lang === "bn") ? "শব্দে বোনা অনুভূতির ঘর" : "A world woven with words and emotions";
 
     // Poems
-    poems.forEach(p => {
-        const titleEl = document.getElementById("title_" + p.id);
-        const descEl  = document.getElementById("desc_" + p.id);
-        const nameEl  = document.getElementById("name_" + p.id);
-        const textEl  = document.getElementById("text_" + p.id);
+poems.forEach(p => {
+    const titleEl = document.getElementById("title_" + p.id);
+    const descEl  = document.getElementById("desc_" + p.id);
+    const nameEl  = document.getElementById("name_" + p.id);
+    const textEl  = document.getElementById("text_" + p.id);
 
-        if (titleEl) titleEl.textContent = p["title_" + lang];
-        if (descEl)  descEl.textContent  = p["desc_" + lang];
-        if (nameEl)  nameEl.textContent  = p["title_" + lang];
-        if (textEl)  textEl.textContent  = p["text_" + lang];
-    });
+    if (titleEl) titleEl.textContent = p["title_" + lang];
+    if (descEl)  descEl.textContent  = p["desc_" + lang];
 
-    updateAbout();
-    updateLangButton();
+    if (nameEl){
+        let fullTitle = p["title_" + lang];
+        nameEl.textContent = fullTitle.split("|")[0].trim();
+    }
+
+    if (textEl)  textEl.textContent  = p["text_" + lang];
+});
+
+updateAbout();
+updateLangButton();
 }
+
 
 /* ================= ABOUT ================= */
 function updateAbout(){
