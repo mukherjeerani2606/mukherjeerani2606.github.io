@@ -1,90 +1,21 @@
 [
-  {
-    "id": "poem1",
-    "title_bn": "নববর্ষ",
-    "title_en": "New Year",
-    "desc_bn": "অপ্রিয় সত্য কথা ...",
-    "desc_en": "The bitter truth ...",
-    "text_bn": `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে 
-বলে প্রনাম নিও, ও বলে আশীষ দিও!
-জেঠু-জেঠি, মামা-মামি, পিসি-পিসে 
-শুভেচ্ছা জানায় সবাই ফোনের ভেতর দিয়ে।
+ {
+  "id":"poem1",
+  "title_bn":"নববর্ষ",
+  "title_en":"New Year",
+  "desc_bn":"অপ্রিয় সত্য কথা ...",
+  "desc_en":"The bitter truth ...",
+  "text_bn":"বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে...",
+  "text_en":"On the first day of the year..."
+ },
 
-ঘরে আনা হচ্ছে মাংস মিষ্টি 
-যাতে পড়ে লোকের দৃষ্টি
-হোয়াটসঅ্যাপ, ভিডিও কল, ফেসবুক 
-নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
-
-হয়তো তুমি, তাকেও জানিয়েছো ফোনে শুভেচ্ছা 
-যার পাশে বসে বলতে পারতে কথা!
-যদি তুমিও মেতেছ ফোনের মাধ্যমে 
-তবে প্রশ্ন করে নিজেকে!
-
-বাড়ির কাউকে কী জানিয়েছো শুভেচ্ছা ?? 
-করেছ কী প্রনাম ??`,
-    "text_en": `On the first day of the year, greetings come counting one by one
-Say your regards, and give your blessings!
-Uncles and aunts, cousins
-Everyone sends wishes through the phone.
-
-Bringing sweets and meat
-To catch everyone's attention
-WhatsApp, video calls, Facebook
-The internet celebrates greetings grandly.
-
-Perhaps you have also sent greetings via phone
-Sitting beside someone, unable to speak!
-If you also sent them via phone
-Then ask yourself!
-
-Did you tell anyone at home your greetings??
-Did you pay your respects??`
-  },
-  {
-    "id": "poem2",
-    "title_bn": "স্বার্থ",
-    "title_en": "Selfishness",
-    "desc_bn": "মানুষের স্বার্থপরতার বাস্তবতা...",
-    "desc_en": "Reality of selfishness...",
-    "text_bn": `দুনিয়াটা স্বার্থে ভরা 
-স্বার্থ ছাড়া সবই মরা !
-বন্ধু হোক সে যতই আপন 
-ভালোবাসাতে সবাই কূপন
-
-নিজের স্বার্থ ফুরালে বুঝি 
-কেউ কাউকে না চিনি 
-যতই ভাবি সবাই 
-ততই বেশি ঠকায় সবাই
-
-হাসলে আমি থাকবে সে 
-কাঁদলে পরে 'তুমি' কে ??
-এ জগতের কেউ কারো নয় 
-মনে পড়ে তার, যখন পার হয় না সময়
-
-তাই তো বলি...
-কও না কথা কথা আমার সনে 
-থাকবো আমি আপন মনে 
-দুনিয়াটা স্বার্থে ভরা 
-স্বার্থ ছাড়া সবই মরা !`,
-    "text_en": `The world is full of selfishness
-Without selfishness, everything dies!
-No matter how close a friend is
-Everyone cheats even in love.
-
-When one's own interest ends
-No one really knows anyone
-The more I think everyone is close
-The more everyone deceives.
-
-If I smile, he/she stays
-If I cry, who cares??
-No one belongs to anyone in this world
-They remember only when time is scarce.
-
-So I say...
-Do not speak much with me
-I will remain with my own mind
-The world is full of selfishness
-Without selfishness, everything dies!`
-  }
+ {
+  "id":"poem2",
+  "title_bn":"স্বার্থ",
+  "title_en":"Selfishness",
+  "desc_bn":"মানুষের স্বার্থপরতার বাস্তবতা...",
+  "desc_en":"Reality of selfishness...",
+  "text_bn":"দুনিয়াটা স্বার্থে ভরা...",
+  "text_en":"The world is full of selfishness..."
+ }
 ]
