@@ -55,15 +55,12 @@ body{
 .read h1{text-align:center;}
 
 .poem{
- font-size:18px;
- line-height:1.85;
- white-space:normal;
- letter-spacing:0;
- word-spacing:0;
  font-family: Georgia, serif;
  font-size:18px;
  line-height:1.8;
- white-space:normal;
+ white-space:pre-wrap;
+ letter-spacing:0;
+ word-spacing:normal;
 }
 
 .read a{
