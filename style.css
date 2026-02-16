@@ -54,9 +54,9 @@ body {
 }
 
 /* HERO SECTION */
-.hero { text-align: center; padding-top: 80px; }
+.hero { text-align: center; padding-top: 50px; }
 .hero h1 { 
- font-size: 80px; 
+ font-size: 50px; 
  letter-spacing: 0; /* IMPORTANT FIX */
  color: #e0e0e0;
 }
