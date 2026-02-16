@@ -122,19 +122,19 @@ if (music && musicBtn) {
   // Load saved state
   if(localStorage.getItem("musicPlaying")==="true"){
     music.play();
-    musicBtn.textContent="🔊";
-  } else {
     musicBtn.textContent="🎵";
+  } else {
+    musicBtn.textContent="🔊";
   }
 
   musicBtn.onclick = () => {
     if(music.paused){
       music.play();
-      musicBtn.textContent="🔊";
+      musicBtn.textContent="🎵";
       localStorage.setItem("musicPlaying","true");
     } else {
       music.pause();
-      musicBtn.textContent="🎵";
+      musicBtn.textContent="🔊";
       localStorage.setItem("musicPlaying","false");
     }
   };
