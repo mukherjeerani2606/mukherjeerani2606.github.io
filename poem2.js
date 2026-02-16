@@ -1,7 +1,7 @@
 poems.push({
   id: "poem2",
-  title_bn: "স্বার্থ",
-  title_en: "Selfishness",
+  title_bn: "স্বার্থ | কবিতা",
+  title_en: "Selfishness | Poem",
   desc_bn: "মানুষের স্বার্থপরতার বাস্তবতা...",
   desc_en: "Reality of selfishness...",
   text_bn: `দুনিয়াটা স্বার্থে ভরা 
