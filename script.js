@@ -59,7 +59,7 @@ function buildUI() {
         poemName.className = "text-animate";
         poemName.id = "name_" + p.id;
 
-        const poemText = document.createElement("pre");
+        const poemText = document.createElement("div");
         poemText.className = "poem text-animate";
         poemText.id = "text_" + p.id;
 
