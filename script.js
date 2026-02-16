@@ -29,6 +29,28 @@ function buildUI() {
     poemPages.innerHTML = "";
 
     poems.forEach(p => {
+    const titleEl = document.getElementById("title_" + p.id);
+    const descEl  = document.getElementById("desc_" + p.id);
+    const nameEl  = document.getElementById("name_" + p.id);
+    const textEl  = document.getElementById("text_" + p.id);
+    const backEl  = document.getElementById("back_" + p.id);
+
+    if (titleEl) titleEl.textContent = p["title_" + lang];
+    if (descEl)  descEl.textContent  = p["desc_" + lang];
+
+    if (nameEl){
+        let fullTitle = p["title_" + lang];
+        nameEl.textContent = fullTitle.split("|")[0].trim();
+    }
+
+    if (textEl)  textEl.textContent  = p["text_" + lang];
+
+    if (backEl){
+        backEl.textContent = (lang === "bn") ? "← ফিরে যাও" : "← Back";
+    }
+});
+
+      
 
         // Card
         const card = document.createElement("a");
@@ -66,7 +88,7 @@ function buildUI() {
         const backBtn = document.createElement("a");
         backBtn.href = "#";
         backBtn.className = "navBtn backBtn";
-        backBtn.textContent = "← Back";
+        backBtn.id = "back_" + p.id;
 
         container.appendChild(poemName);
         container.appendChild(poemText);
