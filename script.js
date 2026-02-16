@@ -114,8 +114,19 @@ document.getElementById("themeToggle").onclick = () => {
 
 /* ================= MUSIC ================= */
 const music = document.getElementById("bgMusic");
-document.getElementById("musicToggle").onclick = () => {
- music.paused ? music.play() : music.pause();
+const musicBtn = document.getElementById("musicToggle");
+
+// default OFF
+musicBtn.textContent = "▶️ 🎵";
+
+musicBtn.onclick = () => {
+ if(music.paused){
+  music.play();
+  musicBtn.textContent = "⏸️ 🎵";
+ } else {
+  music.pause();
+  musicBtn.textContent = "▶️ 🎵";
+ }
 };
 
 /* ================= ABOUT POPUP ================= */
