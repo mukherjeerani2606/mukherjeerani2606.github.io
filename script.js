@@ -1,24 +1,10 @@
-/* ================= CONFIG ================= */
+/* ================= CONFIG ================= */ 
 let lang = "bn";
 let poems = [];
-let aboutData = {};
-
-/* ================= LOAD POEMS ================= */
-fetch("poems.json")
-.then(res => res.json())
-.then(data => {
- poems = data;
- buildUI();
- applyLang();
-});
-
-/* ================= LOAD ABOUT ================= */
-fetch("about.json")
-.then(res => res.json())
-.then(data => {
- aboutData = data;
- updateAbout();
-});
+let aboutData = {
+  bn: "আমি রাণী মুখার্জী, শব্দে বোনা অনুভূতির ঘর।",
+  en: "I am Rani Mukherjee, weaving emotions through words."
+};
 
 /* ================= BUILD UI ================= */
 function buildUI(){
@@ -29,7 +15,6 @@ function buildUI(){
  poemPages.innerHTML = "";
 
  poems.forEach(p => {
-
   // Card
   const card = document.createElement("a");
   card.href = "#";
@@ -57,6 +42,7 @@ function buildUI(){
  });
 
  initNavigation();
+ applyLang();
 }
 
 /* ================= NAVIGATION ================= */
@@ -64,9 +50,7 @@ function initNavigation(){
  document.querySelectorAll(".navBtn").forEach(btn=>{
   btn.onclick = e => {
    e.preventDefault();
-
    document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-
    if(btn.dataset.target){
     document.getElementById(btn.dataset.target).style.display="block";
    } else {
@@ -76,7 +60,7 @@ function initNavigation(){
  });
 }
 
-/* ================= LANGUAGE APPLY ================= */
+/* ================= LANGUAGE ================= */
 function applyLang(){
  poems.forEach(p=>{
   document.getElementById("title_"+p.id).textContent = p["title_"+lang];
@@ -85,42 +69,25 @@ function applyLang(){
   document.getElementById("text_"+p.id).innerText    = p["text_"+lang];
  });
 
- updateAbout();
- updateLangButton();
-}
-
-/* ================= ABOUT ================= */
-function updateAbout(){
- if(aboutData[lang]){
-  document.getElementById("aboutText").textContent = aboutData[lang];
- }
-}
-
-/* ================= LANGUAGE BUTTON ================= */
-function updateLangButton(){
- const btn = document.getElementById("langToggle");
- btn.textContent = (lang === "bn") ? "EN" : "BN";
+ document.getElementById("aboutText").textContent = aboutData[lang];
+ document.getElementById("langToggle").textContent = (lang==="bn")?"EN":"BN";
 }
 
 document.getElementById("langToggle").onclick = () => {
- lang = (lang === "bn") ? "en" : "bn";
+ lang = (lang==="bn")?"en":"bn";
  applyLang();
 };
 
 /* ================= THEME ================= */
 const themeBtn = document.getElementById("themeToggle");
-
-// Load saved theme
 if(localStorage.getItem("theme")==="light"){
   document.body.classList.add("light");
   themeBtn.textContent="☀️";
 } else {
   themeBtn.textContent="🌙";
 }
-
 themeBtn.onclick = () => {
   document.body.classList.toggle("light");
-
   if(document.body.classList.contains("light")){
     themeBtn.textContent="☀️";
     localStorage.setItem("theme","light");
@@ -133,18 +100,17 @@ themeBtn.onclick = () => {
 /* ================= MUSIC ================= */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
-
-// default OFF
-musicBtn.textContent = "▶️ 🎵";
+music.volume = 0.5;
+musicBtn.textContent = "🎵"; // default
 
 musicBtn.onclick = () => {
- if(music.paused){
-  music.play();
-  musicBtn.textContent = "⏸️ 🎵";
- } else {
-  music.pause();
-  musicBtn.textContent = "▶️ 🎵";
- }
+  if(music.paused){
+    music.play();
+    musicBtn.textContent = "🔊";
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵";
+  }
 };
 
 /* ================= ABOUT POPUP ================= */
