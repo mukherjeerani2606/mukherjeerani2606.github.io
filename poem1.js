@@ -4,13 +4,39 @@ poems.push({
   title_en: "New Year",
   desc_bn: "অপ্রিয় সত্য কথা ...",
   desc_en: "The bitter truth ...",
-  text_bn: `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে...
-  
-  বলে প্রনাম নিও, ও বলে আশীষ দিও!
-  ...`,
-  text_en: `On the first day of the year...
-  
-  Say your regards, and give your blessings!
-  ...`
+  text_bn: `বছরের প্রথমদিনে প্রণাম আসে যায় গুনে গুনে 
+	এ বলে প্রনাম নিও, ও বলে আশীষ দিও!
+জেঠু-জেঠি, মামা-মামি, পিসি-পিসে 
+	শুভেচ্ছা জানায় সবাই ফোনের ভেতর দিয়ে।
+
+ঘরে আনা হচ্ছে মাংস মিষ্টি 
+	যাতে পড়ে লোকের দৃষ্টি
+হোয়াটস্অ্যাপ , ভিডিও কল, ফেসবুক 
+	নেট দুনিয়ায় শুভেচ্ছার মহাধুম।
+
+হয়তো তুমি, তাকেও জানিয়েছো ফোনে শুভেচ্ছা 
+	যার পাশে বসে বলতে পারতে কথা !
+যদি তুমিও মেতেছ ফোনের মাধ্যমে 
+	তবে প্রশ্ন করে নিজেকে!
+
+বাড়ির কাউকে কী জানিয়েছো শুভেচ্ছা ?? 
+	করেছ কী প্রনাম ??`,
+  text_en: `On the first day of the year, greetings come counting one by one
+They say your regards, and take your blessings!
+Uncles and aunts, cousins
+Everyone sends wishes through the phone.
+
+Bringing sweets and meat
+To catch everyone's attention
+WhatsApp, video calls, Facebook
+The internet celebrates greetings grandly.
+
+Perhaps you have also sent greetings via phone
+Sitting beside someone, unable to speak!
+If you also sent them via phone
+Then ask yourself!
+
+Did you tell anyone at home your greetings??
+Did you pay your respects??`
 });
 buildUI();
