@@ -21,44 +21,63 @@ fetch("about.json")
 });
 
 /* ================= BUILD UI ================= */
-function buildUI(){
-  const poemList = document.getElementById("poemList");
-  const poemPages = document.getElementById("poemPages");
+function buildUI() {
+    const poemList = document.getElementById("poemList");
+    const poemPages = document.getElementById("poemPages");
 
-  poemList.innerHTML = "";
-  poemPages.innerHTML = "";
+    poemList.innerHTML = "";
+    poemPages.innerHTML = "";
 
-  poems.forEach(p => {
+    poems.forEach(p => {
 
-    // Card
-    const card = document.createElement("a");
-    card.href = "#";
-    card.className = "card navBtn";
-    card.dataset.target = p.id;
-    card.innerHTML = `
-      <h2 id="title_${p.id}"></h2>
-      <p id="desc_${p.id}"></p>
-    `;
-    poemList.appendChild(card);
+        // Card
+        const card = document.createElement("a");
+        card.href = "#";
+        card.className = "card navBtn";
+        card.dataset.target = p.id;
 
-    // Poem Page
-    const page = document.createElement("div");
-    page.className = "page";
-    page.id = p.id;
-    page.style.display = "none";
-    page.innerHTML = `
-      <div class="container read">
-        <h1 class="text-animate" id="name_${p.id}"></h1>
-        <pre class="poem text-animate" id="text_${p.id}"></pre>
-        <a href="#" class="navBtn backBtn">← Back</a>
-      </div>
-    `;
-    poemPages.appendChild(page);
-  });
+        const cardTitle = document.createElement("h2");
+        cardTitle.id = "title_" + p.id;
 
-  initNavigation();
+        const cardDesc = document.createElement("p");
+        cardDesc.id = "desc_" + p.id;
+
+        card.appendChild(cardTitle);
+        card.appendChild(cardDesc);
+        poemList.appendChild(card);
+
+        // Poem Page
+        const page = document.createElement("div");
+        page.className = "page";
+        page.id = p.id;
+        page.style.display = "none";
+
+        const container = document.createElement("div");
+        container.className = "container read";
+
+        const poemName = document.createElement("h1");
+        poemName.className = "text-animate";
+        poemName.id = "name_" + p.id;
+
+        const poemText = document.createElement("pre");
+        poemText.className = "poem text-animate";
+        poemText.id = "text_" + p.id;
+
+        const backBtn = document.createElement("a");
+        backBtn.href = "#";
+        backBtn.className = "navBtn backBtn";
+        backBtn.textContent = "← Back";
+
+        container.appendChild(poemName);
+        container.appendChild(poemText);
+        container.appendChild(backBtn);
+        page.appendChild(container);
+        poemPages.appendChild(page);
+    });
+
+    applyLang(); // <-- populate card titles & descriptions immediately
+    initNavigation(); // <-- attach nav events
 }
-
 /* ================= NAVIGATION ================= */
 function initNavigation(){
   document.querySelectorAll(".navBtn").forEach(btn=>{
@@ -94,17 +113,27 @@ function updateHero(){
 }
 
 /* ================= LANGUAGE APPLY ================= */
-function applyLang(){
-  poems.forEach(p=>{
-    document.getElementById("title_"+p.id).textContent = p["title_"+lang];
-    document.getElementById("desc_"+p.id).textContent  = p["desc_"+lang];
-    document.getElementById("name_"+p.id).textContent  = p["title_"+lang];
-    document.getElementById("text_"+p.id).textContent  = p["text_"+lang];
-  });
+function applyLang() {
+    // Hero
+    document.title = (lang === "bn") ? "রাণীর সাহিত্য ভুবন" : "Rani Mukherjee's Literary World";
+    document.getElementById("authorName").textContent = (lang === "bn") ? "রাণী মুখার্জী" : "Rani Mukherjee";
+    document.getElementById("tagline").textContent = (lang === "bn") ? "শব্দে বোনা অনুভূতির ঘর" : "A world woven with words and emotions";
 
-  updateHero();
-  updateAbout();
-  updateLangButton();
+    // Poems
+    poems.forEach(p => {
+        const titleEl = document.getElementById("title_" + p.id);
+        const descEl  = document.getElementById("desc_" + p.id);
+        const nameEl  = document.getElementById("name_" + p.id);
+        const textEl  = document.getElementById("text_" + p.id);
+
+        if (titleEl) titleEl.textContent = p["title_" + lang];
+        if (descEl)  descEl.textContent  = p["desc_" + lang];
+        if (nameEl)  nameEl.textContent  = p["title_" + lang];
+        if (textEl)  textEl.textContent  = p["text_" + lang];
+    });
+
+    updateAbout();
+    updateLangButton();
 }
 
 /* ================= ABOUT ================= */
